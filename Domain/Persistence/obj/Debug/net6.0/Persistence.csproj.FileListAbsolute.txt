@@ -1,0 +1,17 @@
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\bin\Debug\net6.0\Persistence.deps.json
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\bin\Debug\net6.0\Persistence.runtimeconfig.json
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\bin\Debug\net6.0\Persistence.dll
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\bin\Debug\net6.0\Persistence.pdb
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\bin\Debug\net6.0\Domain.dll
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\bin\Debug\net6.0\Domain.pdb
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\obj\Debug\net6.0\Persistence.csproj.AssemblyReference.cache
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\obj\Debug\net6.0\Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\obj\Debug\net6.0\Persistence.AssemblyInfoInputs.cache
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\obj\Debug\net6.0\Persistence.AssemblyInfo.cs
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\obj\Debug\net6.0\Persistence.csproj.CoreCompileInputs.cache
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\obj\Debug\net6.0\Persistence.csproj.CopyComplete
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\obj\Debug\net6.0\Persistence.dll
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\obj\Debug\net6.0\refint\Persistence.dll
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\obj\Debug\net6.0\Persistence.pdb
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\obj\Debug\net6.0\Persistence.genruntimeconfig.cache
+D:\DDD_Architecture\DDD_Architecture\.git\Domain\Persistence\obj\Debug\net6.0\ref\Persistence.dll

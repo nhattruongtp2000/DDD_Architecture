@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3VFv6VAYjePoqaoS33lFcBtKxjoTuCh0C49g6ecsCMKiWyUAunfCPbO+eiApNhvi4vj2FFipq8nzO5W7rSP4uQ==",
+  "success": true,
+  "projectFilePath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Infrastructure\\Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Truong\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
