@@ -11,6 +11,8 @@ using Infrastructure.Authentication;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Protocols;
 using Infrastructure.Services;
+using Application.Common.Interfaces.Persistence;
+using Infrastructure.Persistence;
 
 namespace Infrastructure
 {
@@ -22,6 +24,8 @@ namespace Infrastructure
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
             services.AddSingleton<IDateTimeProvider, DatetimeProvider>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
             return services;
         }
     }

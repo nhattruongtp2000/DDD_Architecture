@@ -94,3 +94,5 @@ D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.Exten
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Domain.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Domain.pdb

@@ -1239,6 +1239,7 @@
       "Application/1.0.0": {
         "dependencies": {
           "Contracts": "1.0.0",
+          "Domain": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
           "TokenGenerator.Jwt": "1.0.2"
         },
@@ -1249,6 +1250,11 @@
       "Contracts/1.0.0": {
         "runtime": {
           "Contracts.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {}
         }
       },
       "Infrastructure/1.0.0": {
@@ -2227,6 +2233,11 @@
       "sha512": ""
     },
     "Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

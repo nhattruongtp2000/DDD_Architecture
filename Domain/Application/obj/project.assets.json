@@ -2280,6 +2280,16 @@
         "runtime": {
           "bin/placeholder/Contracts.dll": {}
         }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
       }
     }
   },
@@ -7010,11 +7020,17 @@
       "type": "project",
       "path": "../Contracts/Contracts.csproj",
       "msbuildProject": "../Contracts/Contracts.csproj"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Contracts >= 1.0.0",
+      "Domain >= 1.0.0",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 7.0.0",
       "TokenGenerator.Jwt >= 1.0.2"
     ]
@@ -7058,6 +7074,9 @@
           "projectReferences": {
             "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Contracts\\Contracts.csproj": {
               "projectPath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Contracts\\Contracts.csproj"
+            },
+            "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Domain\\Domain.csproj"
             }
           }
         }
