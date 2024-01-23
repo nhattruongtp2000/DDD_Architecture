@@ -55,6 +55,10 @@
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "TokenGenerator.Jwt": {
+              "target": "Package",
+              "version": "[1.0.2, )"
             }
           },
           "imports": [
