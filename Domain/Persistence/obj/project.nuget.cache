@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "PhmUCgOWW91c3iqgE88Le0gkUqJFbpEPwGruWEpWik4VEyur8iqUFwlDb6sO12aKsxOojbp9C3/IxFIsLXzG8w==",
+  "dgSpecHash": "b90hcEE6S62DNmE9Xpu8U/osnMlPSeJj4sx/5AagJBj1FK8Zh9jaf5uPLOCQk6Jeg4453giSESRt3BVbQbbdiQ==",
   "success": true,
   "projectFilePath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Truong\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Truong\\.nuget\\packages\\erroror\\1.9.0\\erroror.1.9.0.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

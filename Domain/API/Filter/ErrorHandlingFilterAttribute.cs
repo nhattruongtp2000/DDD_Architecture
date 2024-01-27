@@ -17,10 +17,7 @@ namespace API.Filter
                 Status = (int)HttpStatusCode.InternalServerError
             };
 
-            context.Result = new ObjectResult(new { error = "An error occured when ff" })
-            {
-                StatusCode = 500
-            };
+            context.Result = new ObjectResult(problemDetails);
 
             context.ExceptionHandled = true;
         }

@@ -16,7 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 //cach 2
 builder.Services.AddControllers();
-builder.Services.AddSingleton<ProblemDetailsFactory, BuberDinnerProblemDetailsFactory>();
+//builder.Services.AddSingleton<ProblemDetailsFactory, BuberDinnerProblemDetailsFactory>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -36,12 +36,15 @@ if (app.Environment.IsDevelopment())
 //app.UseMiddleware<ErrorHandlingMiddleware>();
 
 //cach 3
-app.UseExceptionHandler("/error");
-app.Map("/error", (HttpContext httpContext) =>
+
+if (app.Environment.IsDevelopment())
 {
-    Exception? exception = httpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
-    return Results.Problem();
-});
+    app.UseExceptionHandler("/error-development");
+}
+else
+{
+    app.UseExceptionHandler("/error");
+}
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

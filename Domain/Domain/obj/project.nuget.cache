@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vsW084WPiXLf76GNdZoJNp3PIQs3AfcXZTBC3F9hkQ9KpkxzNQtGjXxguOCUFzCKwtaP8v3I4ClhLrYE3VHpmQ==",
+  "dgSpecHash": "CVobs9MtysDrJL/1b2TwGcVL53i//vxsKzrNCMPvcXex9IKvonla8w7MotZF7o7FyYKLMaDHKrS/82uLWvdT1g==",
   "success": true,
   "projectFilePath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Truong\\.nuget\\packages\\erroror\\1.9.0\\erroror.1.9.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 using Application.Common.Interfaces.Authentication;
 using Application.Common.Interfaces.Persistence;
 using Contracts.Authentication;
+using Domain.Common.Errors;
 using Domain.Entites;
+using ErrorOr;
 
 namespace Application.Authentication
 {
@@ -22,8 +24,14 @@ namespace Application.Authentication
             _userRepository = userRepository;
         }
 
-        public AuthenticationResult Register(string firstName, string lastName, string email, string password)
+        public ErrorOr<AuthenticationResult> Register(string firstName, string lastName, string email, string password)
         {
+            var user = _userRepository.GetUserByEmail(email);
+            if (user == null)
+            {
+                return Errors.User.DuplicateEmail;
+            }
+
             var userId = Guid.NewGuid();
             var token = _tokenGenerator.GenerateToken(new User{FirstName = firstName,LastName = lastName,Email = email,Password = password});
             return new AuthenticationResult(new User { FirstName = firstName, LastName = lastName, Email = email, Password = password },
@@ -31,16 +39,16 @@ namespace Application.Authentication
             );
         }
 
-        public AuthenticationResult Login(string email, string password)
+        public ErrorOr<AuthenticationResult> Login(string email, string password)
         {
             if (_userRepository.GetUserByEmail(email) is not User user)
             {
-                throw new Exception("User with given email does not exist.");
+                return Errors.Authentication.InvalidCredentials;
             }
 
             if (user.Password != password)
             {
-                throw new Exception("Invalid password.");
+                return Errors.Authentication.InvalidCredentials;
             }
 
             var token = _tokenGenerator.GenerateToken(user);

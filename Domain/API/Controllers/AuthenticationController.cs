@@ -1,17 +1,18 @@
-﻿using Application.Authentication;
-using Contracts.Authentication;
+﻿using Contracts.Authentication;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using IAuthenticationService = Application.Authentication.IAuthenticationService;
 
 namespace API.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
-    public class AuthenticationController : ControllerBase
+    public class AuthenticationController : ListErrorsApiController
     {
         private readonly IAuthenticationService _authenticationService;
+
         public AuthenticationController(IAuthenticationService authenticationService)
         {
             _authenticationService = authenticationService;
@@ -21,11 +22,18 @@ namespace API.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterRequest request)
         {
-            var authResult = _authenticationService.Register(request.FirstName, request.LastName, request.Email, request.Password);
+            var authResult =
+                _authenticationService.Register(request.FirstName, request.LastName, request.Email, request.Password);
 
-            var response = new AuthenticationResponse(authResult.User.Id, authResult.User.FirstName, authResult.User.LastName,
-                authResult.User.Email, authResult.Token);
-            return Ok(response);
+            return authResult.Match(authResult => Ok(MapAuthResult(authResult)), 
+                errors =>
+                Problem(errors));
+        }
+
+        private static AuthenticationResponse MapAuthResult(Application.Authentication.AuthenticationResult authResult)
+        {
+            return new AuthenticationResponse(authResult.User.Id, authResult.User.FirstName, authResult.User.LastName,
+                  authResult.User.Email, authResult.Token);
         }
 
 
@@ -35,9 +43,18 @@ namespace API.Controllers
         {
             var authResult = _authenticationService.Login(request.Email, request.Password);
 
-            var response = new AuthenticationResponse(authResult.User.Id, authResult.User.FirstName, authResult.User.LastName,
-                authResult.User.Email, authResult.Token);
-            return Ok(response);
+            //you can custom config 
+            if (authResult.IsError )
+            {
+                // write anything to modify
+            }
+
+            return authResult.Match(authResult => Ok(new AuthenticationResponse(authResult.User.Id,
+                    authResult.User.FirstName, authResult.User.LastName,
+                    authResult.User.Email, authResult.Token)),
+                errors => Problem(errors));
+
+
         }
     }
 }

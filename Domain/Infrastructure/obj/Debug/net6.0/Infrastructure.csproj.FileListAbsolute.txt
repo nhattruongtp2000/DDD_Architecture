@@ -34,3 +34,5 @@ D:\DDD_Architecture\DDD_Architecture\Domain\Infrastructure\obj\Debug\net6.0\Infr
 D:\DDD_Architecture\DDD_Architecture\Domain\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\Infrastructure\bin\Debug\net6.0\Domain.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\Infrastructure\bin\Debug\net6.0\Domain.pdb
+D:\DDD_Architecture\DDD_Architecture\Domain\Infrastructure\bin\Debug\net6.0\Persistence.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\Infrastructure\bin\Debug\net6.0\Persistence.pdb
