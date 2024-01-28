@@ -60,7 +60,6 @@ D:\DDD_Architecture\DDD_Architecture\Domain\API\obj\Debug\net6.0\API.GeneratedMS
 D:\DDD_Architecture\DDD_Architecture\Domain\API\obj\Debug\net6.0\API.AssemblyInfoInputs.cache
 D:\DDD_Architecture\DDD_Architecture\Domain\API\obj\Debug\net6.0\API.AssemblyInfo.cs
 D:\DDD_Architecture\DDD_Architecture\Domain\API\obj\Debug\net6.0\API.csproj.CoreCompileInputs.cache
-D:\DDD_Architecture\DDD_Architecture\Domain\API\obj\Debug\net6.0\API.MvcApplicationPartsAssemblyInfo.cs
 D:\DDD_Architecture\DDD_Architecture\Domain\API\obj\Debug\net6.0\API.MvcApplicationPartsAssemblyInfo.cache
 D:\DDD_Architecture\DDD_Architecture\Domain\API\obj\Debug\net6.0\staticwebassets\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props
 D:\DDD_Architecture\DDD_Architecture\Domain\API\obj\Debug\net6.0\staticwebassets\msbuild.build.API.props
@@ -136,3 +135,6 @@ D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\runtimes\win\li
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Persistence.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Persistence.pdb
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\ErrorOr.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\MediatR.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\MediatR.Contracts.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

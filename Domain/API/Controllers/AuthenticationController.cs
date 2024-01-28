@@ -1,29 +1,33 @@
-﻿using Contracts.Authentication;
+﻿using Application.Authentication.Commands;
+using Application.Authentication.Commands.Register;
+using Application.Authentication.Queries;
+using Contracts.Authentication;
+using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using IAuthenticationService = Application.Authentication.IAuthenticationService;
 
 namespace API.Controllers
 {
     [Route("[controller]")]
     public class AuthenticationController : ListErrorsApiController
     {
-        private readonly IAuthenticationService _authenticationService;
+        private readonly ISender _mediator;
 
-        public AuthenticationController(IAuthenticationService authenticationService)
+        public AuthenticationController(ISender mediator)
         {
-            _authenticationService = authenticationService;
+            _mediator = mediator;
         }
 
         [Route("register")]
         [HttpPost]
         public async Task<IActionResult> Register(RegisterRequest request)
         {
-            var authResult =
-                _authenticationService.Register(request.FirstName, request.LastName, request.Email, request.Password);
+            var command = new RegisterCommand(request.FirstName, request.LastName, request.Email, request.Password);
+            var authResult = await
+                _mediator.Send(command);
 
             return authResult.Match(authResult => Ok(MapAuthResult(authResult)), 
                 errors =>
@@ -41,7 +45,8 @@ namespace API.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginRequest request)
         {
-            var authResult = _authenticationService.Login(request.Email, request.Password);
+            var query = new LoginQuery(request.Email, request.Password);
+            var authResult =  await _mediator.Send(query);
 
             //you can custom config 
             if (authResult.IsError )
