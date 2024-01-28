@@ -138,3 +138,9 @@ D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\ErrorOr.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\MediatR.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\MediatR.Contracts.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Mapster.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Mapster.Core.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\obj\Debug\net6.0\API.MvcApplicationPartsAssemblyInfo.cs
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\FluentValidation.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

@@ -1,12 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "N0nm35X9XLssraJp/OYCRYaFMMQastm6cnF2xxxVNTbKdqN+gaSs9wnbCZJB2htLyUPesXZRrtMJ5Cxltri7uQ==",
+  "dgSpecHash": "l6K1X6m/UTL+6cR/eOIlCGGN950xaDi2Yf3FVCKu8GYESy7MrkumCK/SSss3m4CKQJdkv4WRORfi5C6dHvjM2A==",
   "success": true,
   "projectFilePath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Truong\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\erroror\\1.9.0\\erroror.1.9.0.nupkg.sha512",
+    "C:\\Users\\Truong\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\Truong\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\Truong\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "C:\\Users\\Truong\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",
+    "C:\\Users\\Truong\\.nuget\\packages\\mapster.core\\1.2.1\\mapster.core.1.2.1.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.0.0\\mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

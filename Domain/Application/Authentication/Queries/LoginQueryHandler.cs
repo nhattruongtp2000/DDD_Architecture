@@ -23,6 +23,7 @@ namespace Application.Authentication.Queries
         }
         public async Task<ErrorOr<AuthenticationResult>> Handle(LoginQuery query, CancellationToken cancellationToken)
         {
+            await Task.CompletedTask;
             if (_userRepository.GetUserByEmail(query.Email) is not User user)
             {
                 return Domain.Common.Errors.Errors.Authentication.InvalidCredentials;

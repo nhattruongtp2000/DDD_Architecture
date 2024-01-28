@@ -1,3 +1,4 @@
+using API;
 using API.Common.Error;
 using API.Filter;
 using API.Middleware;
@@ -9,7 +10,10 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
-    builder.Services.AddApplication().AddInfrastructure(builder.Configuration);
+    builder.Services
+        .AddPresentation()
+        .AddApplication()
+        .AddInfrastructure(builder.Configuration);
 }
 
 // Add services to the container.

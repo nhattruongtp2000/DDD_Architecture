@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "MtKIDvA71MjfgqGb1mDhPKTkuPcR8xbnoVJG7E/ABaXg50mB7RNSy742ImXiOh1VrgFH7T7qRVJzllcG4Q5U8w==",
+  "dgSpecHash": "LenEZxed7mOa0GPXapCxSnd76kUTKRFeRi6D8Q7vT3oepLiH6p1JwW6RG8B6jCHPBSj9VUfa2/n9brhZIQfPkg==",
   "success": true,
   "projectFilePath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Truong\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\erroror\\1.9.0\\erroror.1.9.0.nupkg.sha512",
+    "C:\\Users\\Truong\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\Truong\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\Truong\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.0.0\\mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

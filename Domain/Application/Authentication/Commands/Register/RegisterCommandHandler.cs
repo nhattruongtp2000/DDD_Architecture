@@ -28,6 +28,7 @@ namespace Application.Authentication.Commands.Register
         }
         public async Task<ErrorOr<AuthenticationResult>> Handle(RegisterCommand command, CancellationToken cancellationToken)
         {
+            await Task.CompletedTask;
             var user = _userRepository.GetUserByEmail(command.Email);
             if (user == null)
             {

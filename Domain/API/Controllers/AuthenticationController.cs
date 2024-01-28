@@ -2,12 +2,14 @@
 using Application.Authentication.Commands.Register;
 using Application.Authentication.Queries;
 using Contracts.Authentication;
+using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Globalization;
 
 namespace API.Controllers
 {
@@ -15,37 +17,32 @@ namespace API.Controllers
     public class AuthenticationController : ListErrorsApiController
     {
         private readonly ISender _mediator;
+        private readonly IMapper _mapper;
 
-        public AuthenticationController(ISender mediator)
+        public AuthenticationController(ISender mediator,IMapper mapper)
         {
             _mediator = mediator;
+            _mapper = mapper;
         }
 
         [Route("register")]
         [HttpPost]
         public async Task<IActionResult> Register(RegisterRequest request)
         {
-            var command = new RegisterCommand(request.FirstName, request.LastName, request.Email, request.Password);
+            var command = _mapper.Map<RegisterCommand>(request);
             var authResult = await
                 _mediator.Send(command);
 
-            return authResult.Match(authResult => Ok(MapAuthResult(authResult)), 
+            return authResult.Match(authResult => Ok(_mapper.Map<AuthenticationResponse>(authResult)), 
                 errors =>
                 Problem(errors));
         }
-
-        private static AuthenticationResponse MapAuthResult(Application.Authentication.AuthenticationResult authResult)
-        {
-            return new AuthenticationResponse(authResult.User.Id, authResult.User.FirstName, authResult.User.LastName,
-                  authResult.User.Email, authResult.Token);
-        }
-
 
         [Route("login")]
         [HttpPost]
         public async Task<IActionResult> Login(LoginRequest request)
         {
-            var query = new LoginQuery(request.Email, request.Password);
+            var query =_mapper.Map<LoginQuery>(request);
             var authResult =  await _mediator.Send(query);
 
             //you can custom config 
@@ -54,9 +51,7 @@ namespace API.Controllers
                 // write anything to modify
             }
 
-            return authResult.Match(authResult => Ok(new AuthenticationResponse(authResult.User.Id,
-                    authResult.User.FirstName, authResult.User.LastName,
-                    authResult.User.Email, authResult.Token)),
+            return authResult.Match(authResult => Ok(_mapper.Map<AuthenticationResponse>(authResult)),
                 errors => Problem(errors));
 
 

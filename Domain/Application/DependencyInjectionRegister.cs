@@ -9,6 +9,8 @@ using Application.Authentication.Commands;
 using Application.Authentication.Queries;
 using MediatR;
 using System.Reflection;
+using FluentValidation;
+using Application.Authentication.Behaviors;
 
 namespace Application
 {
@@ -17,6 +19,14 @@ namespace Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddMediatR(typeof(DependencyInjectionRegister).Assembly);
+
+
+            services.AddScoped(
+          typeof(IPipelineBehavior<,>),
+          typeof(ValidationBehavior<,>));
+
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
             return services;
         }
     }
