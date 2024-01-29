@@ -66,9 +66,27 @@ namespace Infrastructure.Persistence
             }
         }
 
-        public void Add(User user)
+        public bool RegisterUser(User user)
         {
-            _users.Add(user);
+            try
+            {
+                using(var db=new ApplicationDbContext())
+                {
+                    var userExist=db.Users.FirstOrDefault(x=>x.Email==user.Email);
+                    if (userExist != null)
+                    {
+                        return false;
+                    }
+
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

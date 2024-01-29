@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "66ESyhpUxAKKRH4CddBc4XMfi/qO/H5dhQrYiz9lV7nuGxEOeTZSILceD/uTkmEMJPiMZ7blmNa1FgYXIyiW5w==",
+  "dgSpecHash": "FRaFTTIePhQ6Cdxfdm+xKhDAMRze+Gik6TIls3gOBUS9/Gf2xsu5K0kDsR89zw+o3gUN5xOdM48vvP9NfjrK3A==",
   "success": true,
   "projectFilePath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Application\\Application.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\Truong\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "C:\\Users\\Truong\\.nuget\\packages\\mapster\\7.4.0\\mapster.7.4.0.nupkg.sha512",
+    "C:\\Users\\Truong\\.nuget\\packages\\mapster.core\\1.2.1\\mapster.core.1.2.1.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.0.0\\mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

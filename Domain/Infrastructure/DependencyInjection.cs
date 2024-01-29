@@ -56,6 +56,8 @@ namespace Infrastructure
                         Encoding.UTF8.GetBytes(jwtSettings.Secret))
                 });
 
+
+
             return services;
         }
     }

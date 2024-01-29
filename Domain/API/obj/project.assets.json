@@ -1732,6 +1732,7 @@
           "Domain": "1.0.0",
           "FluentValidation": "11.9.0",
           "FluentValidation.AspNetCore": "11.3.0",
+          "Mapster": "7.4.0",
           "MediatR": "11.0.0",
           "MediatR.Contracts": "2.0.1",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.0.0",
