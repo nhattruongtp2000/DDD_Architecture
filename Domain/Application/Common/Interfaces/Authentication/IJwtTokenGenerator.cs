@@ -10,7 +10,9 @@ namespace Application.Common.Interfaces.Authentication
 {
     public interface IJwtTokenGenerator
     {
-        string GenerateToken(User user, List<Claim> claims);
+        string GenerateToken(List<Claim> claims);
         string GenerateRefreshToken();
+        ClaimsPrincipal? GetPrincipalFromExpiredToken(string? token);
+
     }
 }

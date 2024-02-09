@@ -15,5 +15,12 @@ namespace Domain.Common.Errors
                 code: "Auth.InvalidCred",
                 description: "Invalid credentials.");
         }
+
+        //public static class RefreshTokenAuthentication
+        //{
+        //    public static Error InvalidCredentials => Error.Validation(
+        //        code: "Auth.InvalidCred",
+        //        description: "Invalid credentials.");
+        //}
     }
 }

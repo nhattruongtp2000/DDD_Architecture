@@ -102,8 +102,12 @@ namespace Infrastructure.Persistence
                 authClaims.Add(new Claim(ClaimTypes.Role, userRole));
             }
 
-            var token = _tokenGenerator.GenerateToken(user, authClaims);
+            var token = _tokenGenerator.GenerateToken( authClaims);
             var refreshToken = _tokenGenerator.GenerateRefreshToken();
+
+
+            user.RefreshToken = refreshToken;
+            user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
 
             await _userManager.UpdateAsync(user);
             user.RefreshToken = refreshToken;
@@ -133,6 +137,7 @@ namespace Infrastructure.Persistence
                         LastName = user.LastName,
                         Password = user.Password
                     };
+                    var result = await _userManager.CreateAsync(userIdentity, user.Password);
 
                     var userRoles = await _userManager.GetRolesAsync(user);
 
@@ -149,14 +154,13 @@ namespace Infrastructure.Persistence
                         authClaims.Add(new Claim(ClaimTypes.Role, userRole));
                     }
 
-                    var token = _tokenGenerator.GenerateToken(user, authClaims);
+                    var token = _tokenGenerator.GenerateToken( authClaims);
                     var refreshToken = _tokenGenerator.GenerateRefreshToken();
 
-                    await _userManager.UpdateAsync(user);
+                    await _userManager.UpdateAsync(userIdentity);
                     user.RefreshToken = refreshToken;
                     user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
 
-                    var result = await _userManager.CreateAsync(userIdentity, user.Password);
 
                     if (!result.Succeeded)
                     {
@@ -172,5 +176,7 @@ namespace Infrastructure.Persistence
                 return (false, "", "");
             }
         }
+
+
     }
 }
