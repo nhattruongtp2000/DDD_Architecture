@@ -10,6 +10,7 @@ using Microsoft.IdentityModel.Tokens;
 using Application.Common.Interfaces.Services;
 using Domain.Entites;
 using Microsoft.Extensions.Options;
+using System.Security.Cryptography;
 
 namespace Infrastructure.Authentication
 {
@@ -24,20 +25,21 @@ namespace Infrastructure.Authentication
             _jwtSettings = jwtSettings.Value;
         }
 
-        public string GenerateToken(User user)
+        public string GenerateRefreshToken()
+        {
+            var randomNumber = new byte[64];
+            using var rng = RandomNumberGenerator.Create();
+            rng.GetBytes(randomNumber);
+            return Convert.ToBase64String(randomNumber);
+        }
+
+        public string GenerateToken(User user, List<Claim> claims)
         {
             var signingCredentials = new SigningCredentials(
                 new SymmetricSecurityKey(
                     Encoding.UTF8.GetBytes(_jwtSettings.Secret)),
                 SecurityAlgorithms.HmacSha256);
 
-            var claims = new[]
-            {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-                new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
-                new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            };
 
             var securityToken = new JwtSecurityToken(
                 issuer: _jwtSettings.Issuer,

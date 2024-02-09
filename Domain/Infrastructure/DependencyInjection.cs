@@ -16,6 +16,9 @@ using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Domain.Entites;
+using Persistence;
+using Microsoft.AspNetCore.Identity;
 
 namespace Infrastructure
 {
@@ -27,6 +30,11 @@ namespace Infrastructure
           .AddAuth(configuration);
 
             services.AddSingleton<IDateTimeProvider, DatetimeProvider>();
+
+            services.AddDbContext<ApplicationDbContext>();
+            services.AddIdentity<User, Roles>()
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
 
             services.AddScoped<IUserRepository, UserRepository>();
 

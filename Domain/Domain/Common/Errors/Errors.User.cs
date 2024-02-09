@@ -14,6 +14,10 @@ namespace Domain.Common.Errors
             public static Error DuplicateEmail => Error.Conflict(
                 code: "User.DuplicateEmail",
                 description: "Email is already in use.");
+
+            public static Error PasswordIsInvalid => Error.Validation(
+    code: "User.PasswordIsInvalid",
+    description: "Password is invalid");
         }
     }
 }

@@ -144,3 +144,8 @@ D:\DDD_Architecture\DDD_Architecture\Domain\API\obj\Debug\net6.0\API.MvcApplicat
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\FluentValidation.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

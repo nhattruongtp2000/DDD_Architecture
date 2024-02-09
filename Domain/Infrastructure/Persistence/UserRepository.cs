@@ -1,9 +1,14 @@
-﻿using Application.Common.Interfaces.Persistence;
+﻿using Application.Authentication.Queries;
+using Application.Common.Interfaces.Authentication;
+using Application.Common.Interfaces.Persistence;
 using Domain.Entites;
+using Microsoft.AspNetCore.Identity;
 using Persistence;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,15 +16,25 @@ namespace Infrastructure.Persistence
 {
     public class UserRepository : IUserRepository
     {
-        private static readonly List<User> _users = new();
+        private readonly UserManager<User> _userManager;
+        private readonly RoleManager<Roles> _roleManager;
+        private readonly IJwtTokenGenerator _tokenGenerator;
 
-        public User? GetUserByEmail(string email)
+        public UserRepository(UserManager<User> userManager, RoleManager<Roles> roleManager, IJwtTokenGenerator tokenGenerator)
+        {
+            _userManager = userManager;
+            _roleManager = roleManager;
+            _tokenGenerator = tokenGenerator;
+        }
+
+        public async Task<User?> GetUserByEmail(string email)
         {
             try
             {
                 using (var db = new ApplicationDbContext())
                 {
-                    var user = db.Users.FirstOrDefault(p => p.Email == email);
+                    var user = await _userManager.FindByNameAsync(email);
+
                     if (user == null)
                     {
                         return null;
@@ -66,26 +81,95 @@ namespace Infrastructure.Persistence
             }
         }
 
-        public bool RegisterUser(User user)
+        public async Task<(bool, string, string)> LoginUser(LoginQuery userData)
+        {
+            var user = await _userManager.FindByNameAsync(userData.Email);
+            if (user == null) return (false, "", "");
+            var checkValidUser = await _userManager.CheckPasswordAsync(user, userData.Password);
+
+            var userRoles = await _userManager.GetRolesAsync(user);
+
+            var authClaims = new List<Claim>
+        {
+            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+        new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
+        new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+        };
+
+            foreach (var userRole in userRoles)
+            {
+                authClaims.Add(new Claim(ClaimTypes.Role, userRole));
+            }
+
+            var token = _tokenGenerator.GenerateToken(user, authClaims);
+            var refreshToken = _tokenGenerator.GenerateRefreshToken();
+
+            await _userManager.UpdateAsync(user);
+            user.RefreshToken = refreshToken;
+            user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
+
+            return (true, token, refreshToken);
+        }
+
+        public async Task<(bool, string, string)> RegisterUser(User user)
         {
             try
             {
-                using(var db=new ApplicationDbContext())
+                using (var db = new ApplicationDbContext())
                 {
-                    var userExist=db.Users.FirstOrDefault(x=>x.Email==user.Email);
+                    var userExist = await _userManager.FindByEmailAsync(user.Email);
                     if (userExist != null)
                     {
-                        return false;
+                        return (false, "", "");
                     }
 
-                    db.Users.Add(user);
-                    db.SaveChanges();
-                    return true;
+                    User userIdentity = new()
+                    {
+                        Email = user.Email,
+                        SecurityStamp = user.Id.ToString(),
+                        UserName = user.Email,
+                        FirstName = user.FirstName,
+                        LastName = user.LastName,
+                        Password = user.Password
+                    };
+
+                    var userRoles = await _userManager.GetRolesAsync(user);
+
+                    var authClaims = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+            new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
+            new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            };
+
+                    foreach (var userRole in userRoles)
+                    {
+                        authClaims.Add(new Claim(ClaimTypes.Role, userRole));
+                    }
+
+                    var token = _tokenGenerator.GenerateToken(user, authClaims);
+                    var refreshToken = _tokenGenerator.GenerateRefreshToken();
+
+                    await _userManager.UpdateAsync(user);
+                    user.RefreshToken = refreshToken;
+                    user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
+
+                    var result = await _userManager.CreateAsync(userIdentity, user.Password);
+
+                    if (!result.Succeeded)
+                    {
+                        return (false, "", "");
+                    }
+
+                    return (true, token, refreshToken);
+
                 }
             }
             catch (Exception ex)
             {
-                return false;
+                return (false, "", "");
             }
         }
     }

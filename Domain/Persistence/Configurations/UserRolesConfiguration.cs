@@ -13,7 +13,7 @@ namespace Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<UserRoles> builder)
         {
-            builder.HasKey(x => new {x.UserId,x.RoleId});
+            builder.HasKey(x => new { x.UserId, x.RoleId });
 
             builder.HasOne(x => x.User)
                 .WithMany(u => u.UserRoles)
