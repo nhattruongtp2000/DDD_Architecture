@@ -10,8 +10,9 @@ namespace Application.Common.Interfaces.Persistence
 {
     public interface IUserRepository
     {
-        Task<User?> GetUserByEmail(string email);
-        Task<(bool, string, string)> RegisterUser(User user);
+        Task<Domain.Entites.User> GetUserByEmail(string email);
+        Task<List<Domain.Entites.User>> GetAllUser(string key);
+        Task<(bool, string, string)> RegisterUser(Domain.Entites.User user);
         Task<(bool, string, string)> LoginUser(LoginQuery userData);
     }
 }

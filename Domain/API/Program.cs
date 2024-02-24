@@ -4,6 +4,7 @@ using API.Filter;
 using API.Middleware;
 using Application;
 using Application.Authentication;
+using Contracts.Common;
 using Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Diagnostics;
@@ -28,6 +29,7 @@ builder.Services.AddAuthentication(options =>
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
 });
 
+DataLocals.ConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 //cach 2
 builder.Services.AddControllers();

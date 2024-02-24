@@ -8,6 +8,6 @@ using Domain.Entites;
 namespace Application.Authentication
 {
     public record AuthenticationResult(
-        User User,
+        Domain.Entites.User User,
         string Token);
 }

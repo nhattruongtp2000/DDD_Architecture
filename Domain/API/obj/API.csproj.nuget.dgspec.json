@@ -382,6 +382,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.28, )"
+            },
             "Microsoft.Extensions.Configuration.FileExtensions": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -443,6 +447,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Contracts\\Contracts.csproj": {
+                "projectPath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Contracts\\Contracts.csproj"
+              },
               "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Domain\\Domain.csproj": {
                 "projectPath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Domain\\Domain.csproj"
               }
@@ -459,6 +466,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.28, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.15, )"

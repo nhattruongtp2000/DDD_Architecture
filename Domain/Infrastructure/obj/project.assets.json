@@ -46,6 +46,19 @@
           }
         }
       },
+      "Dapper/2.1.28": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "ErrorOr/1.9.0": {
         "type": "package",
         "compile": {
@@ -1755,6 +1768,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Contracts": "1.0.0",
+          "Dapper": "2.1.28",
           "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.15",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.15"
@@ -1805,6 +1820,27 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "Dapper/2.1.28": {
+      "sha512": "ha49pzOEDmCPkMxwfPSR/wxa/6RD3r42TESIgpzpi7FXq/gNVUuJVEO+wtUzntNRhtmq3BKCl0s0aAlSZLkBUA==",
+      "type": "package",
+      "path": "dapper/2.1.28",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.1.28.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net5.0/Dapper.dll",
+        "lib/net5.0/Dapper.xml",
+        "lib/net7.0/Dapper.dll",
+        "lib/net7.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml",
+        "readme.md"
       ]
     },
     "ErrorOr/1.9.0": {
@@ -4232,6 +4268,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Application >= 1.0.0",
+      "Dapper >= 2.1.28",
       "Microsoft.Extensions.Configuration.FileExtensions >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 7.0.0",
       "Persistence >= 1.0.0"
@@ -4293,6 +4330,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.1.28, )"
+          },
           "Microsoft.Extensions.Configuration.FileExtensions": {
             "target": "Package",
             "version": "[7.0.0, )"

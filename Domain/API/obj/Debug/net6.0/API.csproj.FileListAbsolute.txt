@@ -149,3 +149,4 @@ D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.AspNe
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Dapper.dll

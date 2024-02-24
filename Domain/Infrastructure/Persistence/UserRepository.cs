@@ -1,8 +1,10 @@
 ﻿using Application.Authentication.Queries;
 using Application.Common.Interfaces.Authentication;
 using Application.Common.Interfaces.Persistence;
+using Dapper;
 using Domain.Entites;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Data.SqlClient;
 using Persistence;
 using System;
 using System.Collections.Generic;
@@ -25,6 +27,16 @@ namespace Infrastructure.Persistence
             _userManager = userManager;
             _roleManager = roleManager;
             _tokenGenerator = tokenGenerator;
+        }
+
+        public async Task<List<User>> GetAllUser(string key)
+        {
+            using (var db = new ApplicationDbContext())
+            {
+                var sql = $@"SELECT TOP 100 * FROM AspNetUsers";
+                var x = db.ExecuteQuery<User>(sql).ToList();
+                return x;
+            } 
         }
 
         public async Task<User?> GetUserByEmail(string email)

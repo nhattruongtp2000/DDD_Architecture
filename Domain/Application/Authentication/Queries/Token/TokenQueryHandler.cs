@@ -18,9 +18,9 @@ namespace Application.Authentication.Queries.Token
     public class TokenQueryHandler : IRequestHandler<TokenQuery, ErrorOr<RefreshTokenResult>>
     {
         private readonly IJwtTokenGenerator _tokenGenerator;
-        private readonly UserManager<User> _userManager;
+        private readonly UserManager<Domain.Entites.User> _userManager;
 
-        public TokenQueryHandler(IJwtTokenGenerator tokenGenerator, UserManager<User> userManager)
+        public TokenQueryHandler(IJwtTokenGenerator tokenGenerator, UserManager<Domain.Entites.User> userManager)
         {
             _tokenGenerator = tokenGenerator;
             _userManager= userManager;

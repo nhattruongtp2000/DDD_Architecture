@@ -32,3 +32,5 @@ D:\DDD_Architecture\DDD_Architecture\Domain\Persistence\obj\Debug\net6.0\refint\
 D:\DDD_Architecture\DDD_Architecture\Domain\Persistence\obj\Debug\net6.0\Persistence.pdb
 D:\DDD_Architecture\DDD_Architecture\Domain\Persistence\obj\Debug\net6.0\Persistence.genruntimeconfig.cache
 D:\DDD_Architecture\DDD_Architecture\Domain\Persistence\obj\Debug\net6.0\ref\Persistence.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\Persistence\bin\Debug\net6.0\Contracts.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\Persistence\bin\Debug\net6.0\Contracts.pdb

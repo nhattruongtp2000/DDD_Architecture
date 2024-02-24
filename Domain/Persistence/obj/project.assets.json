@@ -46,6 +46,19 @@
           }
         }
       },
+      "Dapper/2.1.28": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "ErrorOr/1.9.0": {
         "type": "package",
         "compile": {
@@ -1156,6 +1169,16 @@
           }
         }
       },
+      "Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contracts.dll": {}
+        }
+      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1209,6 +1232,27 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "Dapper/2.1.28": {
+      "sha512": "ha49pzOEDmCPkMxwfPSR/wxa/6RD3r42TESIgpzpi7FXq/gNVUuJVEO+wtUzntNRhtmq3BKCl0s0aAlSZLkBUA==",
+      "type": "package",
+      "path": "dapper/2.1.28",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.1.28.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net5.0/Dapper.dll",
+        "lib/net5.0/Dapper.xml",
+        "lib/net7.0/Dapper.dll",
+        "lib/net7.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml",
+        "readme.md"
       ]
     },
     "ErrorOr/1.9.0": {
@@ -3099,6 +3143,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Contracts/1.0.0": {
+      "type": "project",
+      "path": "../Contracts/Contracts.csproj",
+      "msbuildProject": "../Contracts/Contracts.csproj"
+    },
     "Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
@@ -3107,6 +3156,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Contracts >= 1.0.0",
+      "Dapper >= 2.1.28",
       "Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.15",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.15",
@@ -3150,6 +3201,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Contracts\\Contracts.csproj": {
+              "projectPath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Contracts\\Contracts.csproj"
+            },
             "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Domain\\Domain.csproj": {
               "projectPath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Domain\\Domain.csproj"
             }
@@ -3166,6 +3220,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.1.28, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[7.0.15, )"

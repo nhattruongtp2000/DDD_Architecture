@@ -37,13 +37,13 @@ namespace Application.Authentication.Commands.Register
             }
 
 
-            var registerUser = await _userRepository.RegisterUser(_mapper.Map<User>(command));
+            var registerUser = await _userRepository.RegisterUser(_mapper.Map<Domain.Entites.User>(command));
 
             if (!registerUser.Item1)
                 return Errors.User.PasswordIsInvalid;
 
             var token = registerUser.Item2;
-            return new AuthenticationResult(new User { FirstName = command.FirstName, LastName = command.LastName, Email = command.Email, Password = command.Password },
+            return new AuthenticationResult(new Domain.Entites.User { FirstName = command.FirstName, LastName = command.LastName, Email = command.Email, Password = command.Password },
                 token
             );
         }

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "MTSBXjMQHptTKhqgaYf+fxi72nnD+WdDDs7Uf1h20f5tTVnNWEW9LeSdXq85jOzTqPLeiSqJR8m4Tac32KdQIQ==",
+  "dgSpecHash": "5bWXF8iu80xCyLUmdxmS7tD6DAXRY1XlclrlJ72xH25xiRBF9t4p1KS+uqw758YXXbyIsuYiVJVi4qsNoyP5tA==",
   "success": true,
   "projectFilePath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Truong\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Truong\\.nuget\\packages\\dapper\\2.1.28\\dapper.2.1.28.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\erroror\\1.9.0\\erroror.1.9.0.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\Truong\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
