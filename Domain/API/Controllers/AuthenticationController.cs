@@ -17,7 +17,7 @@ using System.IdentityModel.Tokens.Jwt;
 
 namespace API.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class AuthenticationController : ListErrorsApiController
     {
         private readonly ISender _mediator;

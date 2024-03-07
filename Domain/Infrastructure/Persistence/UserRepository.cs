@@ -124,7 +124,6 @@ namespace Infrastructure.Persistence
             await _userManager.UpdateAsync(user);
             user.RefreshToken = refreshToken;
             user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
-
             return (true, token, refreshToken);
         }
 
