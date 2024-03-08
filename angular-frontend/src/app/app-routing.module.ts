@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './_helper/auth.guard';
+import { UserComponent } from './user/user.component';
 
 
 const accountModule = () => import('./account/account.module').then(x => x.AccountModule);
@@ -14,6 +15,7 @@ const routes: Routes = [
      { path: 'account', loadChildren: accountModule },
      { path: 'app-login', component: LoginComponent },
      { path: 'app-register', component: RegisterComponent },
+     { path: 'app-user', component: UserComponent },
 
       // otherwise redirect to home
     { path: '**', redirectTo: '' }
