@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form=this.formBuilder.group({
-      email:['ailapronam2010',Validators.required],
+      email:['nhattruong@gmai.com',Validators.required],
       password:['Kiprao123*',Validators.required]
     })
 
@@ -50,18 +50,21 @@ export class LoginComponent implements OnInit {
 }
 
 export class User {
-  FirstName:string;
   LastName:string;
   Email:string;
   Password:string;
-  Token:string;;
+  Token:string;
+  FirstName:string;
+
+
   constructor(firstName:string,lastName:string,email:string,password:string,token:string){
+    this.FirstName=firstName,
     this.Email=email;
     this.Password=password;
     this.Token=token;
-    this.FirstName=firstName;
     this.LastName=lastName;
   }
+
 }
 export interface LoginResult{
   FirstName:string;

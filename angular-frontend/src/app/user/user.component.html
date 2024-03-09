@@ -1,212 +1,236 @@
-<div class="containers bg-gray-300">
-    <div>
-        <h3>Profile</h3>
+<div class="containers bg-gray-200">
+  <div>
+    <div class="ml-[10%]">
+      <h3>Profile</h3>
     </div>
-
     <div class="flex">
-        <div class="w-[10%]">
+      <div class="w-[10%]"></div>
+      <div class="w-[30%] space-y-3">
+        <div class="bg-white rounded-[10px] p-3 space-y-2 text-[10px]">
+            <img width="50px" src="assets/img/jese-leos-2x.png"/>
+          <div class="font-bold text-[15px]">{{userModel.LastName}}</div>
 
-        </div>
-        <div class="w-[30%] space-y-3">
-                <div class="bg-white rounded-[10px] p-3 space-y-2 text-[10px]">
-                    <div>Jese Leos</div>
+          <div>
+            <div>Front-end Developer</div>
+            <div>San Francisco, USA</div>
+          </div>
+          
+          <div>
+            <div>Email address</div>
+            <div class="font-bold">{{userModel.Email}}</div>
+          </div>
 
-                    <div>
-                        <div>Front-end Developer</div>
-                        <div>San Francisco, USA</div>
-                    </div>
-                    <div>
-                        <div>Email address</div>
-                        <div>yourname@flowbite.com</div>
-                    </div>
-                    
-                    <div>
-                        <div>Home address</div>
-                        <div>92 Miles Drive, Newark, NJ 07103, California,</div>
-                        <div>United States of America</div>
-                    </div>
-             
-                    <div>
-                        <div>Phone number</div>
-                        <div>+00 123 456 789 / +12 345 678r</div>
-                    </div>
-                 
-                    <div class="font-bold">Software Skill</div>
-                </div>
+          <div>
+            <div>Home address</div>
+            <div class="font-bold">92 Miles Drive, Newark, NJ 07103, California,</div>
+            <div class="font-bold">United States of America</div>
+          </div>
 
-                <div class="bg-white rounded-[10px] p-3 space-y-2 text-[10px]">
-                    <div>Skill</div>
-                    <div class="flex-wrap space-x-1 ">
-                        <span class="rounded-[3px] bg-green-300 text-[13px] p-1">
-                            Brand Design
-                        </span>
+          <div>
+            <div>Phone number</div>
+            <div>+00 123 456 789 / +12 345 678r</div>
+          </div>
 
-                        <span class="rounded-[3px] bg-green-300 text-[13px] p-1">
-                            Brand Design
-                        </span>
-
-                        <span class="rounded-[3px] bg-green-300 text-[13px] p-1">
-                            Brand Design
-                        </span>
-
-                        <span class="rounded-[3px] bg-green-300 text-[13px] p-1">
-                         /div>g   Brand Design
-                        </span>
-
-                        <span class="rounded-[3px] bg-green-300 text-[13px] p-1">
-                            Brand Design
-                        </span>
-
-                        <span class="rounded-[3px] bg-green-300 text-[13px] p-1">
-                            Brand Design
-                        </span>
-                        <span class="rounded-[3px] bg-green-300 text-[13px] p-1">
-                            Brand Design
-                        </span>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-[10px] p-3 space-y-2 text-[10px]">
-                    <div>Hobbies</div>
-                    <div class="flex-wrap space-x-1 ">
-                        <span class="rounded-[3px] bg-blue-300 text-[13px] p-1">
-                            Brand Design
-                        </span>
-
-                        <span class="rounded-[3px] bg-blue-300 text-[13px] p-1">
-                            Brand Design
-                        </span>
-
-                        <span class="rounded-[3px] bg-blue-300 text-[13px] p-1">
-                            Brand Design
-                        </span>
-
-                        <span class="rounded-[3px] bg-blue-300 text-[13px] p-1">
-                            Brand Design
-                        </span>
-
-                        <span class="rounded-[3px] bg-blue-300 text-[13px] p-1">
-                            Brand Design
-                        </span>
-
-                        <span class="rounded-[3px] bg-blue-300 text-[13px] p-1">
-                            Brand Design
-                        </span>
-                        <span class="rounded-[3px] bg-blue-300 text-[13px] p-1">
-                            Brand Design
-                        </span>
-                    </div>
-                </div>
+          <div class="font-bold">Software Skill</div>
         </div>
 
-        <div class="w-[60%] space-y-2">
-              <div class="bg-white rounded-[10px] p-3 space-y-2 text-[10px]">
-                <div class="font-bold">
-                    General information
-                </div>
+        <div class="bg-white rounded-[10px] p-6 space-y-2">
+          <div class="font-bold">Skills</div>
+          <div class="flex flex-wrap  gap-2 text-[10px]">
+            <span class="rounded-[3px] bg-green-200 text-[13px] p-1  ">
+              Brand Design
+            </span>
+            <span class="rounded-[3px] bg-green-200 text-[13px] p-1 ">
+              Brand Design
+            </span>
 
-                <div class="flex">
-                    <div class="w-[50%]"> 
-                        <div class="font-normal">
-                            About me
-                        </div>
-        
-                        <div class="text-[10px]">
-                            Tincidunt quam neque in cursus viverra orci, dapibus nec tristique. Nullam ut sit dolor consectetur urna, dui cras nec sed. Cursus risus congue arcu aenean posuere aliquam.
-                        </div>
-        
-                        <div class="text-[10px]">
-                            Et vivamus lorem pulvinar nascetur non. Pulvinar a sed platea rhoncus ac mauris amet. Urna, sem pretium sit pretium urna, senectus vitae. Scelerisque fermentum, cursus felis dui suspendisse velit pharetra. Augue et duis cursus maecenas eget quam lectus. Accumsan vitae nascetur pharetra rhoncus praesent dictum risus suspendisse.
-                        </div>
-                    </div>
+            <span class="rounded-[3px] bg-green-200 text-[13px] p-1">
+              Brand Design
+            </span>
 
-                    <div class="w-[50%]">
-                       
-                    </div>
-                </div>
+            <span class="rounded-[3px] bg-green-200 text-[13px] p-1">
+              Brand Design
+            </span>
 
-                <div class="flex ">
-                    <div class="space-y-3">
-                        <div>
-                            <div class="text-[10px]">Education</div>
-                            <div class="text-[13px]">Thomas Jeff High School, Stanford University</div>
-                        </div>
-                        <div>
-                            <div class="text-[10px]">Join Date</div>
-                            <div class="text-[13px]">12-09-2021</div>
-                        </div>
-                        <div>
-                            <div class="text-[10px]">Organization</div>
-                            <div class="text-[13px]">Themesberg LLC</div>
-                        </div>
-                        <div>
-                            <div class="text-[10px]">Department</div>
-                            <div class="text-[13px]">Marketing</div>
-                        </div>
-                    </div>
+            <span class="rounded-[3px] bg-green-200 text-[13px] p-1">
+              Brand Design
+            </span>
 
-                    <div class="space-y-3">
-                        <div>
-                            <div class="text-[10px]">Work History</div>
-                            <div class="text-[13px]">Twitch, Google, Apple</div>
-                        </div>
-                        <div>
-                            <div class="text-[10px]">Languages</div>
-                            <div class="text-[13px]">English, German, Italian, Spanish</div>
-                        </div>
-                        <div>
-                            <div class="text-[10px]">Role</div>
-                            <div class="text-[13px]">Graphic Designer</div>
-                        </div>
-                        <div>
-                            <div class="text-[10px]">Birthday</div>
-                            <div class="text-[13px]">15-08-1990</div>
-                        </div>
-                    </div>
-                </div>
+            <span class="rounded-[3px] bg-green-200 text-[13px] p-1">
+              Brand Design
+            </span>
+
+            <span class="rounded-[3px] bg-green-200 text-[13px] p-1">
+              Brand Design
+            </span>
+            <span class="rounded-[3px] bg-green-200 text-[13px] p-1">
+              Brand Design
+            </span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-[10px] p-6 space-y-2">
+          <div class="font-bold">Hobbies</div>
+          <div class="flex flex-wrap gap-2 text-[10px]">
+            <span class="rounded-[3px] bg-blue-200 text-[13px] p-1">
+              Brand Design
+            </span>
+
+            <span class="rounded-[3px] bg-blue-200 text-[13px] p-1">
+              Brand Design
+            </span>
+
+            <span class="rounded-[3px] bg-blue-200 text-[13px] p-1">
+              Brand Design
+            </span>
+
+            <span class="rounded-[3px] bg-blue-200 text-[13px] p-1">
+              Brand Design
+            </span>
+
+            <span class="rounded-[3px] bg-blue-200 text-[13px] p-1">
+              Brand Design
+            </span>
+
+            <span class="rounded-[3px] bg-blue-200 text-[13px] p-1">
+              Brand Design
+            </span>
+            <span class="rounded-[3px] bg-blue-200 text-[13px] p-1">
+              Brand Design
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-[60%] space-y-2 ml-[10px]">
+        <div class="bg-white rounded-[10px] p-3 space-y-3 text-[10px]">
+          <div class="font-bold">General information</div>
+
+          <div class="flex">
+            <div class="w-[50%] space-y-3">
+              <div class="font-bold">About me</div>
+
+              <div class="text-[10px]">
+                Tincidunt quam neque in cursus viverra orci, dapibus nec
+                tristique. Nullam ut sit dolor consectetur urna, dui cras nec
+                sed. Cursus risus congue arcu aenean posuere aliquam.
               </div>
-              
-              <div class="flex bg-white rounded-[10px] p-3  text-[10px]" >
-                <div class="w-[50%] space-y-3 px-3">
-                    <div class="border bg-gray-300 border-gray-300 w-[100%]">
-                        <div class="border border-black w-[90%]">
-                        </div>
-                    </div>
 
-                    <div class="border bg-gray-300 border-gray-300 w-[100%]">
-                        <div class="border border-black w-[90%]">
-                        </div>
-                    </div>
-                    <div class="border bg-gray-300 border-gray-300 w-[100%]">
-                        <div class="border border-black w-[90%]">
-                        </div>
-                    </div>
-                    <div class="border bg-gray-300 border-gray-300 w-[100%]">
-                        <div class="border border-black w-[90%]">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-[50%] space-y-3 px-3">
-                    <div class="border bg-gray-300 border-gray-300 w-[100%]">
-                            <div class="border border-black w-[90%]">
-                            </div>
-                    </div>
-    
-                        <div class="border bg-gray-300 border-gray-300 w-[100%]">
-                            <div class="border border-black w-[90%]">
-                            </div>
-                        </div>
-                        <div class="border bg-gray-300 border-gray-300 w-[100%]">
-                            <div class="border border-black w-[90%]">
-                            </div>
-                        </div>
-                        <div class="border bg-gray-300 border-gray-300 w-[100%]">
-                            <div class="border border-black w-[90%]">
-                            </div>
-                        </div>
-                    </div>
+              <div class="text-[10px]">
+                Et vivamus lorem pulvinar nascetur non. Pulvinar a sed platea
+                rhoncus ac mauris amet. Urna, sem pretium sit pretium urna,
+                senectus vitae. Scelerisque fermentum, cursus felis dui
+                suspendisse velit pharetra. Augue et duis cursus maecenas eget
+                quam lectus. Accumsan vitae nascetur pharetra rhoncus praesent
+                dictum risus suspendisse.
               </div>
+            </div>
+
+            <div class="w-[50%]"></div>
+          </div>
+
+          <div class="flex">
+            <div class="space-y-3 text-[10px] w-[50%]">
+              <div>
+                <div class="text-[10px] ">Education</div>
+                <div class="font-bold">Thomas Jeff High School, Stanford University</div>
+              </div>
+              <div>
+                <div class="text-[10px]">Join Date</div>
+                <div class="font-bold">12-09-2021</div>
+              </div>
+              <div>
+                <div class="text-[10px]">Organization</div>
+                <div class="font-bold">Themesberg LLC</div>
+              </div>
+              <div>
+                <div class="text-[10px]">Department</div>
+                <div class="font-bold">Marketing</div>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div>
+                <div class="text-[10px]">Work History</div>
+                <div class="font-bold">Twitch, Google, Apple</div>
+              </div>
+              <div>
+                <div class="text-[10px]">Languages</div>
+                <div class="font-bold">English, German, Italian, Spanish</div>
+              </div>
+              <div>
+                <div class="text-[10px]">Role</div>
+                <div class="font-bold">Graphic Designer</div>
+              </div>
+              <div>
+                <div class="text-[10px]">Birthday</div>
+                <div class="font-bold">15-08-1990</div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="flex bg-white rounded-[10px] p-3 text-[10px] ">
+          <div class="w-[50%] px-3 space-y-3">
+            <div>
+              <div>Figma</div>
+              <div class="border bg-gray-200 border-gray-200 w-[100%] h-[5px] rounded-[10px]">
+                <div class="border border-black w-[90%] h-[5px] bg-black rounded-[10px]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div>Php</div>
+              <div class="border bg-gray-200 border-gray-200 w-[100%] h-[5px] rounded-[10px]">
+                <div class="border border-black w-[90%] h-[5px] bg-black rounded-[10px]"></div>
+              </div>
+            </div>
+            <div>
+              <div>HTML</div>
+              <div class="border bg-gray-200 border-gray-200 w-[100%] h-[5px] rounded-[10px]">
+                <div class="border border-black w-[90%] h-[5px] bg-black rounded-[10px]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div>React</div>
+              <div class="border bg-gray-200 border-gray-200 w-[100%] h-[5px] rounded-[10px]">
+                <div class="border border-black w-[90%] h-[5px] bg-black rounded-[10px]"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-[50%] px-3 space-y-3">
+            <div>
+              <div>Vue</div>
+              <div class="border bg-gray-200 border-gray-200 w-[100%] h-[5px] rounded-[10px]">
+                <div class="border border-black w-[90%] h-[5px] bg-black rounded-[10px]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div>Marketing</div>
+              <div class="border bg-gray-200 border-gray-200 w-[100%] h-[5px] rounded-[10px]">
+                <div class="border border-black w-[90%] h-[5px] bg-black rounded-[10px]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div>Product Design</div>
+              <div class="border bg-gray-200 border-gray-200 w-[100%] h-[5px] rounded-[10px]">
+                <div class="border border-black w-[90%] h-[5px] bg-black rounded-[10px]"></div>
+              </div>
+            </div>
+
+            <div>
+              <div>Angular</div>
+              <div class="border bg-gray-200 border-gray-200 w-[100%] h-[5px] rounded-[10px]">
+                <div class="border border-black w-[90%] h-[5px] bg-black rounded-[10px]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

@@ -21,12 +21,14 @@ namespace Infrastructure.Persistence
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<Roles> _roleManager;
         private readonly IJwtTokenGenerator _tokenGenerator;
+        private readonly ApplicationDbContext _context;
 
-        public UserRepository(UserManager<User> userManager, RoleManager<Roles> roleManager, IJwtTokenGenerator tokenGenerator)
+        public UserRepository(UserManager<User> userManager, RoleManager<Roles> roleManager, IJwtTokenGenerator tokenGenerator,ApplicationDbContext context)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _tokenGenerator = tokenGenerator;
+            _context = context;
         }
 
         public async Task<List<User>> GetAllUser(string key)
@@ -91,6 +93,12 @@ namespace Infrastructure.Persistence
             {
                 return null;
             }
+        }
+
+        public async Task<User> GetUserById(Guid userId)
+        {
+            var user = await _context.Users.FindAsync(userId);
+            return user;
         }
 
         public async Task<(bool, string, string)> LoginUser(LoginQuery userData)

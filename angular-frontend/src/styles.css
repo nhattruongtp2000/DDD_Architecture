@@ -2,3 +2,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .background-white {
+        background: white;
+        padding: 10px;
+        border-radius: 0.2cm;
+    }
+  }

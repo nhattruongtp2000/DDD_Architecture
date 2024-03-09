@@ -45,6 +45,18 @@ export class UserService{
         })
     }
 
+    public getUserById( userId : string){
+          return axios.post(this.url+userId).then(response=>{
+            if(response.status=200)
+            {
+              var data=response.data;
+                const userData= new User(data.fistname,data.lastName,data.email,data.password,data.token) 
+                return userData;
+            }
+            return null;
+          })
+    }
+
     logout(){
         localStorage.removeItem('user');
         this.userSubject.next(null);

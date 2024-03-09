@@ -11,6 +11,7 @@ namespace Application.Common.Interfaces.Persistence
     public interface IUserRepository
     {
         Task<Domain.Entites.User> GetUserByEmail(string email);
+        Task<Domain.Entites.User> GetUserById(Guid userId );
         Task<List<Domain.Entites.User>> GetAllUser(string key);
         Task<(bool, string, string)> RegisterUser(Domain.Entites.User user);
         Task<(bool, string, string)> LoginUser(LoginQuery userData);
