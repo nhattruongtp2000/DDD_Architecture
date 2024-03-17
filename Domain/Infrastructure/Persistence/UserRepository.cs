@@ -1,15 +1,22 @@
-﻿using Application.Authentication.Queries;
+﻿using Application.Authentication.Commands.User;
+using Application.Authentication.Queries;
 using Application.Common.Interfaces.Authentication;
 using Application.Common.Interfaces.Persistence;
+using Contracts.UsersContracts;
 using Dapper;
 using Domain.Entites;
+using MapsterMapper;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Persistence;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,13 +29,19 @@ namespace Infrastructure.Persistence
         private readonly RoleManager<Roles> _roleManager;
         private readonly IJwtTokenGenerator _tokenGenerator;
         private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
+        private readonly string _userContentFolder;
+        private const string USER_CONTENT_FOLDER_NAME = "assets\\img";
 
-        public UserRepository(UserManager<User> userManager, RoleManager<Roles> roleManager, IJwtTokenGenerator tokenGenerator,ApplicationDbContext context)
+        public UserRepository(IWebHostEnvironment webHostEnvironment,UserManager<User> userManager, RoleManager<Roles> roleManager, IJwtTokenGenerator tokenGenerator,ApplicationDbContext context,IMapper mapper)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _tokenGenerator = tokenGenerator;
             _context = context;
+            _mapper = mapper;
+            _userContentFolder = Path.Combine(webHostEnvironment.WebRootPath, USER_CONTENT_FOLDER_NAME);
+
         }
 
         public async Task<List<User>> GetAllUser(string key)
@@ -57,36 +70,6 @@ namespace Infrastructure.Persistence
                     {
                         return user;
                     }
-                    //else //remove existing order
-                    //{
-                    //    using (var trans = db.Database.BeginTransaction())
-                    //    {
-                    //        try
-                    //        {
-                    //            db.oRD_HEADERs.RemoveRange(ords);
-                    //            db.SaveChanges();
-                    //            trans.Commit();
-                    //            return true;
-                    //        }
-                    //        catch (DbEntityValidationException e)
-                    //        {
-                    //            foreach (var eve in e.EntityValidationErrors)
-                    //            {
-                    //                foreach (var ve in eve.ValidationErrors)
-                    //                {
-                    //                }
-                    //            }
-
-                    //            trans.Rollback();
-                    //            return false;
-                    //        }
-                    //        catch (Exception ex)
-                    //        {
-                    //            trans.Rollback();
-                    //            return false;
-                    //        }
-                    //    }
-                    //}
                 }
             }
             catch (Exception ex)
@@ -105,8 +88,10 @@ namespace Infrastructure.Persistence
         {
             var user = await _userManager.FindByNameAsync(userData.Email);
             if (user == null) return (false, "", "");
-            var checkValidUser = await _userManager.CheckPasswordAsync(user, userData.Password);
+            var checkValidUser = user.Password.Equals(userData.Password);
 
+            if (!checkValidUser)
+                return (false, null, null);
             var userRoles = await _userManager.GetRolesAsync(user);
 
             var authClaims = new List<Claim>
@@ -196,6 +181,88 @@ namespace Infrastructure.Persistence
             }
         }
 
+        public async Task<User> UpdateByEmail(UserCommand updateUser)
+        {
+            try
+            {
+                var updateUser2 = (UserUpdateData)updateUser.userUpdate;
+                var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == updateUser2.Email);
+                if (user == null)
+                {
+                    return null;
+                }
+                user.FirstName = updateUser2.FirstName;
+                user.LastName = updateUser2.LastName;
 
+                await _context.SaveChangesAsync();
+                return user;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<User> UpdatePassword(UserCommand updateUser)
+        {
+            try
+            {
+                var updateUser2 = (UpdatePasswordRequest)updateUser.userUpdate;
+                var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == updateUser2.Email);
+                if (user == null)
+                {
+                    return null;
+                }
+                if(user.Password!= updateUser2.OldPassword)
+                {
+                    return null;
+                }
+                if (!updateUser2.NewPassword.Equals(updateUser2.ConfirmNewPassword))
+                {
+                    return null;
+                }
+                user.Password = updateUser2.NewPassword;
+                await _context.SaveChangesAsync();
+                return user;
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<bool> UploadImage(UserCommand request)
+        {
+            var updateUser2 = (UserImageCreateRequest)request.userUpdate;
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == updateUser2.Email);
+            if (user == null)
+                return false;
+            var imagePath = await SaveFile(updateUser2.ImageFile);
+            if (!string.IsNullOrEmpty(imagePath))
+            {
+                user.ImagePath = imagePath;
+                return true;
+            }
+            return false;
+        }
+
+        private async Task<string> SaveFile(IFormFile file)
+        {
+            try
+            {
+                var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
+
+                var filePath = Path.Combine(_userContentFolder, fileName);
+                using var output = new FileStream(filePath, FileMode.Create);
+                await file.OpenReadStream().CopyToAsync(output);
+                return fileName;
+            }
+            catch (Exception ex)
+            {
+                return "";
+            }
+        }
     }
 }

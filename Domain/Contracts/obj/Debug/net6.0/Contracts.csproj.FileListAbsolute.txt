@@ -22,3 +22,6 @@ D:\DDD_Architecture\DDD_Architecture\Domain\Contracts\obj\Debug\net6.0\Contracts
 D:\DDD_Architecture\DDD_Architecture\Domain\Contracts\obj\Debug\net6.0\refint\Contracts.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\Contracts\obj\Debug\net6.0\Contracts.pdb
 D:\DDD_Architecture\DDD_Architecture\Domain\Contracts\obj\Debug\net6.0\ref\Contracts.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\Contracts\bin\Debug\net6.0\Domain.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\Contracts\bin\Debug\net6.0\Domain.pdb
+D:\DDD_Architecture\DDD_Architecture\Domain\Contracts\obj\Debug\net6.0\Contracts.csproj.CopyComplete

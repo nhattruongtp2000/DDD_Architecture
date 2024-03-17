@@ -12,7 +12,7 @@
         </div>
 
         <div class="ml-3">
-          <div class="font-bold text-[20px]">Jese Leos</div>
+          <div class="font-bold text-[20px]">{{ userModel.FirstName }}</div>
           <div>Software Engineer</div>
           <button class="bg-blue-600 rounded-[5px] p-[5px] text-white">
             Change picture
@@ -319,227 +319,237 @@
       <div class="w-[10%]"></div>
       <div class="background-white">
         <div class="text-[20px] font-bold">General information</div>
-        <div class="flex">
-          <div class="w-[50%]">
-            <div>
-              <div>First Name</div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="flex">
+            <div class="w-[50%]">
               <div>
-                <input
-                  class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-                  placeholder="Bonnie"
-                  type="text"
-                />
+                <div>First Name</div>
+                <div>
+                  <input
+                    class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                    placeholder="Bonnie"
+                    formControlName="FirstName"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div>Country</div>
+                <div>
+                  <input
+                    class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                    placeholder="Bonnie"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div>Address</div>
+                <div>
+                  <input
+                    class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                    placeholder="Bonnie"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div>Phone Number</div>
+                <div>
+                  <input
+                    class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                    placeholder="Bonnie"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div>Organization</div>
+                <div>
+                  <input
+                    class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                    placeholder="Bonnie"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div>Department</div>
+                <div>
+                  <input
+                    class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                    placeholder="Bonnie"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div>Department</div>
+                <div>
+                  <input
+                    class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                    placeholder="Bonnie"
+                    type="text"
+                  />
+                </div>
               </div>
             </div>
 
-            <div>
-              <div>Country</div>
+            <div class="w-[50%]">
               <div>
-                <input
-                  class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-                  placeholder="Bonnie"
-                  type="text"
-                />
+                <div>Last Name</div>
+                <div>
+                  <input
+                    class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                    placeholder="Bonnie"
+                    type="text"
+                    formControlName="LastName"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div>
-              <div>Address</div>
               <div>
-                <input
-                  class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-                  placeholder="Bonnie"
-                  type="text"
-                />
+                <div>City</div>
+                <div>
+                  <input
+                    class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                    placeholder="Bonnie"
+                    type="text"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div>
-              <div>Phone Number</div>
               <div>
-                <input
-                  class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-                  placeholder="Bonnie"
-                  type="text"
-                />
+                <div>Email</div>
+                <div>
+                  <input
+                    class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                    placeholder="Bonnie"
+                    type="text"
+                    formControlName="Email"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div>
-              <div>Organization</div>
               <div>
-                <input
-                  class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-                  placeholder="Bonnie"
-                  type="text"
-                />
+                <div>Birthdayr</div>
+                <div>
+                  <input
+                    class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                    placeholder="Bonnie"
+                    type="text"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div>
-              <div>Department</div>
               <div>
-                <input
-                  class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-                  placeholder="Bonnie"
-                  type="text"
-                />
+                <div>Zip/postal code</div>
+                <div>
+                  <input
+                    class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                    placeholder="Bonnie"
+                    type="text"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div>
-              <div>Department</div>
               <div>
-                <input
-                  class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-                  placeholder="Bonnie"
-                  type="text"
-                />
+                <div>Department</div>
+                <div>
+                  <input
+                    class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                    placeholder="Bonnie"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div>First Name</div>
+                <div>
+                  <input
+                    class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                    placeholder="Bonnie"
+                    type="text"
+                  />
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="w-[50%]">
-            <div>
-              <div>Last Name</div>
-              <div>
-                <input
-                  class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-                  placeholder="Bonnie"
-                  type="text"
-                />
-              </div>
-            </div>
-
-            <div>
-              <div>City</div>
-              <div>
-                <input
-                  class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-                  placeholder="Bonnie"
-                  type="text"
-                />
-              </div>
-            </div>
-
-            <div>
-              <div>Email</div>
-              <div>
-                <input
-                  class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-                  placeholder="Bonnie"
-                  type="text"
-                />
-              </div>
-            </div>
-
-            <div>
-              <div>Birthdayr</div>
-              <div>
-                <input
-                  class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-                  placeholder="Bonnie"
-                  type="text"
-                />
-              </div>
-            </div>
-
-            <div>
-              <div>Zip/postal code</div>
-              <div>
-                <input
-                  class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-                  placeholder="Bonnie"
-                  type="text"
-                />
-              </div>
-            </div>
-
-            <div>
-              <div>Department</div>
-              <div>
-                <input
-                  class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-                  placeholder="Bonnie"
-                  type="text"
-                />
-              </div>
-            </div>
-
-            <div>
-              <div>First Name</div>
-              <div>
-                <input
-                  class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-                  placeholder="Bonnie"
-                  type="text"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
           <button
+            type="submit"
             class="btn mt-3 bg-blue-700 text-white font-medium rounded-[10px] px-[1rem] py-[0.5rem] border border-blue-700"
           >
             Save all
           </button>
-        </div>
+        </form>
       </div>
 
       <div class="background-white">
         <div class="font-bold text-[20px]">Password information</div>
-        <div class="flex">
-          <div class="w-[50%]">
-            <div>Currtent Password</div>
-            <input
-              class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-              placeholder="Bonnie"
-              type="text"
-            />
+        <form [formGroup]="formPassword" (ngSubmit)="onSubmit2()">
+          <div class="flex">
+            <div class="w-[50%]">
+              <div>Currtent Password</div>
+              <input
+                class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                placeholder="Bonnie"
+                type="text"
+                formControlName="OldPassword"
+              />
 
-            <div>Confirm password</div>
-            <input
-              class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-              placeholder="Bonnie"
-              type="text"
-            />
+              <div>Confirm password</div>
+              <input
+                class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                placeholder="Bonnie"
+                type="text"
+                formControlName="ConfirmNewPassword"
+              />
 
-            <div class="mt-5">
-              <div class="font-bold">Password requirements:</div>
-              <p class="text-gray-400">
-                Ensure that these requirements are met:
-              </p>
+              <div class="mt-5">
+                <div class="font-bold">Password requirements:</div>
+                <p class="text-gray-400">
+                  Ensure that these requirements are met:
+                </p>
 
-              <div class="ml-5">
-                At least 10 characters (and up to 100 characters)
-                <br />
-                At least one lowercase character
-                <br />
-                Inclusion of at least one special character, e.g., ! @ # ?
-                <br />
-                Some text here zoltan
+                <div class="ml-5">
+                  At least 10 characters (and up to 100 characters)
+                  <br />
+                  At least one lowercase character
+                  <br />
+                  Inclusion of at least one special character, e.g., ! @ # ?
+                  <br />
+                  Some text here zoltan
+                </div>
+                <button
+                type="submit"
+                  class="btn mt-3 bg-blue-700 text-white font-medium rounded-[10px] px-[1rem] py-[0.5rem] border border-blue-700"
+                >
+                  Save all
+                </button>
               </div>
-              <button
-                class="btn mt-3 bg-blue-700 text-white font-medium rounded-[10px] px-[1rem] py-[0.5rem] border border-blue-700"
-              >
-                Save all
-              </button>
             </div>
-          </div>
 
-          <div class="w-[50%]">
-            <div>New password</div>
-            <input
-              class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
-              placeholder="Bonnie"
-              type="text"
-            />
-            <div>
-              <input type="text" />
+            <div class="w-[50%]">
+              <div>New password</div>
+              <input
+                class="w-[90%] border border-gray-400 rounded-[7px] bg-gray-100 p-[0.625rem]"
+                placeholder="Bonnie"
+                type="text"
+                formControlName="NewPassword"
+              />
+              <div>
+                <input type="text" />
+              </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <div class="background-white">
@@ -613,14 +623,14 @@
   </div>
 
   <!-- row2 -->
-  <div class="flex ">
+  <div class="flex">
     <div class="w-[10%]"></div>
     <div class="background-white mr-5 w-[45%]">
       <div class="text-[25px] font-bold">Alerts & Notifications</div>
-      <div >You can set up Themesberg to get notifications</div>
+      <div>You can set up Themesberg to get notifications</div>
 
       <div class="flex justify-between items-center">
-        <div >
+        <div>
           <div class="text-[20px] font-bold">Company News</div>
           <div>Get Themesberg news, announcements, and product updates</div>
         </div>
@@ -634,7 +644,7 @@
         </div>
       </div>
 
-      <div class="flex  justify-between items-center">
+      <div class="flex justify-between items-center">
         <div>
           <div class="text-[20px] font-bold">Account Activity</div>
           <div>
@@ -682,7 +692,11 @@
           </label>
         </div>
       </div>
-      <button class="btn mt-3 bg-blue-700 text-white font-medium rounded-[10px] px-[1rem] py-[0.5rem] border border-blue-700">Save all</button>
+      <button
+        class="btn mt-3 bg-blue-700 text-white font-medium rounded-[10px] px-[1rem] py-[0.5rem] border border-blue-700"
+      >
+        Save all
+      </button>
     </div>
 
     <div class="w-[45%] background-white">
@@ -722,7 +736,7 @@
       </div>
 
       <div class="flex justify-between items-center">
-        <div >
+        <div>
           <div class="text-[20px] font-bold">Item comment notifications</div>
           <div>Send me an email when someone comments on one of my items</div>
         </div>
@@ -752,7 +766,11 @@
           </label>
         </div>
       </div>
-      <button class="btn mt-3 bg-blue-700 text-white font-medium rounded-[10px] px-[1rem] py-[0.5rem] border border-blue-700">Save all</button>
+      <button
+        class="btn mt-3 bg-blue-700 text-white font-medium rounded-[10px] px-[1rem] py-[0.5rem] border border-blue-700"
+      >
+        Save all
+      </button>
     </div>
   </div>
 </div>

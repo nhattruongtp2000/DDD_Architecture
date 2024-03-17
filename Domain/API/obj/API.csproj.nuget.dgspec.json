@@ -226,7 +226,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Domain\\Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -238,6 +242,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

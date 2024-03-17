@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { UserComponent } from './user/user.component';
+import { UserSettingComponent } from './user/usersetting.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { UserComponent } from './user/user.component';
     AppComponent,
     HomeComponent,
     UserComponent,
+    UserSettingComponent
   ],
   imports: [
     BrowserModule,

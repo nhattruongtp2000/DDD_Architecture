@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "bUm1vPqwZHJejLhtNIB7WgmMI8ngxypkYrDApg4MvgQ=",
+  "Hash": "xHMyWqDZTzf8z0q6fDMcSMwTGfBJxUzYZYYANZZwEO8=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "API\\wwwroot",
+      "Source": "API",
+      "ContentRoot": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\assets\\img\\51d45911-3231-4541-b3a3-e9ae319b38cc.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "assets/img/51d45911-3231-4541-b3a3-e9ae319b38cc.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\51d45911-3231-4541-b3a3-e9ae319b38cc.png"
+    },
+    {
+      "Identity": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\assets\\img\\5ec3fe80-907f-45db-9cac-f3c9421fedea.png",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "assets/img/5ec3fe80-907f-45db-9cac-f3c9421fedea.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\5ec3fe80-907f-45db-9cac-f3c9421fedea.png"
+    }
+  ]
 }
