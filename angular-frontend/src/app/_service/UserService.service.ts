@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import axios from 'axios';
 import { User } from '../login/login.component';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { RegisterRequest, UpdatePasswordRequest, UserUpdateRequest } from '../_model/User/UserRequest';
+import { RegisterRequest, UpdatePasswordRequest, UserUpdateRequest,UserImageCreateRequest } from '../_model/User/UserRequest';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { LoginRequest } from '../_model/User/UserRequest';
@@ -39,7 +39,7 @@ export class UserService{
             {
                 var data=response.data;
                 console.log(data)
-                const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token) 
+                const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token,data.ImagePath) 
                 console.log(userData)
                 localStorage.setItem('user',JSON.stringify(userData))
                 this.userSubject.next(userData)
@@ -54,7 +54,7 @@ export class UserService{
             if(response.status=200)
             {
               var data=response.data;
-                const userData= new User(data.fistname,data.lastName,data.email,data.password,data.token) 
+                const userData= new User(data.fistname,data.lastName,data.email,data.password,data.token,data.ImagePath) 
                 return userData;
             }
             return null;
@@ -69,7 +69,7 @@ export class UserService{
         {
           console.log(response)
           var data=response.data.data;
-          const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token) 
+          const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token,data.ImagePath) 
           localStorage.setItem('user',JSON.stringify(userData))
           this.userSubject.next(userData)
           return userData;
@@ -84,7 +84,33 @@ export class UserService{
         if(response.status=200)
         {
           var data=response.data.data;
-          const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token) 
+          const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token,data.ImagePath) 
+        //  localStorage.setItem('user',JSON.stringify(userData))
+         // this.userSubject.next(userData)
+          return userData;
+        }
+        return null;
+      })
+    }
+    
+    public uploadImage(requestUpload: UserImageCreateRequest) {
+      const formData = new FormData();
+      formData.append('ImageFile', requestUpload.ImageFile);
+      formData.append('Email', requestUpload.Email);
+      formData.append('Caption', requestUpload.Caption);
+      formData.append('IsDefault', "");
+      console.log(formData)
+      let headers = new Headers({ 'Content-Type': 'application/json' });    
+      headers.append('Content-Type', 'multipart/form-data');
+      return axios.post(this.urlUser+"/upload-user-image",formData,{
+        headers: {
+          'Content-Type': 'multipart/form-data' // <- HERE
+        }
+      }).then(response=>{
+        if(response.status=200)
+        {
+          var data=response.data.data;
+          const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token,data.ImagePath) 
         //  localStorage.setItem('user',JSON.stringify(userData))
          // this.userSubject.next(userData)
           return userData;

@@ -75,7 +75,7 @@ namespace API.Controllers
 
         [Route("upload-user-image")]
         [HttpPost]
-        public async Task<IActionResult> UploadImageUser([FromForm] UserImageCreateRequest request)
+        public async Task<IActionResult> UploadImageUser( UserImageCreateRequest request)
         {
             var command = _mapper.Map<UserCommand>(request);
             var commandResult = await _mediator.Send(command);
@@ -90,7 +90,7 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public ActionResult Get(Guid id)
         {
-            var files = Directory.GetFiles(@"img\");
+            var files = Directory.GetFiles(@"wwwroot\assets\img");
             foreach (var file in files)
             {
                 if (file.Contains(id.ToString()))

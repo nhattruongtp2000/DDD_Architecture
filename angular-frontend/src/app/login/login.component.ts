@@ -27,7 +27,8 @@ export class LoginComponent implements OnInit {
     Password:'',
     Token:"",
     FirstName:"",
-    LastName:""
+    LastName:"",
+    ImagePath:""
   }
 
   handleChange(event: any){
@@ -55,15 +56,16 @@ export class User {
   Password:string;
   Token:string;
   FirstName:string;
+  ImagePath:string;
 
 
-  constructor(firstName:string,lastName:string,email:string,password:string,token:string){
+  constructor(firstName:string,lastName:string,email:string,password:string,token:string,imagePath:string){
     this.FirstName=firstName,
     this.LastName=lastName;
     this.Email=email;
     this.Password=password;
     this.Token=token;
-
+    this.ImagePath=imagePath;
   }
 
 }

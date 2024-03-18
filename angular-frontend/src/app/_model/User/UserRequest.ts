@@ -46,3 +46,9 @@ export interface AuthenticationResponse{
     Password:string;
     Token:string;
   }
+    export interface UserImageCreateRequest{
+      Email:string;
+      Caption:string;
+      IsDefault:boolean;
+      ImageFile :File;
+    }

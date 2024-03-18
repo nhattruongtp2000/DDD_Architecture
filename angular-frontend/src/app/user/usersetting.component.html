@@ -8,7 +8,7 @@
     <div class="w-[30%] space-y-2">
       <div class="background-white flex">
         <div>
-          <img width="100px" class="p-2" src="assets/img/jese-leos-2x.png" />
+          <img width="100px" class="p-2" src="https://localhost:7127/api/Users/5ec3fe80-907f-45db-9cac-f3c9421fedea" />
         </div>
 
         <div class="ml-3">
@@ -17,7 +17,9 @@
           <button class="bg-blue-600 rounded-[5px] p-[5px] text-white">
             Change picture
           </button>
+          <input   #imageInput type="file" />
         </div>
+        <button (click)="processFile(imageInput)" >Save</button>
       </div>
 
       <div class="background-white space-y-2">

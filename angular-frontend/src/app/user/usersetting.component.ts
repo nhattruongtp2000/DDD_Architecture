@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_service/UserService.service';
 import { User } from '../login/login.component';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
-import { UpdatePasswordRequest, UserUpdateData, UserUpdateRequest } from '../_model/User/UserRequest'; 
+import { UpdatePasswordRequest, UserUpdateData, UserUpdateRequest,UserImageCreateRequest } from '../_model/User/UserRequest'; 
+
+class ImageSnippet {
+  constructor(public src: string, public file: File) {}
+}
 @Component({
   selector: 'app-usersetting',
   templateUrl: './usersetting.component.html',
@@ -13,12 +17,13 @@ import { UpdatePasswordRequest, UserUpdateData, UserUpdateRequest } from '../_mo
 export class UserSettingComponent implements OnInit {
   form!:FormGroup
   formPassword!:FormGroup
+  selectedFile!: ImageSnippet
   constructor(private userService:UserService,private formBuilder:FormBuilder) {
     const user = this.userService.userValue
-    this.userModel = new User(user!.FirstName,user!.LastName,user!.Email,user!.Password,user!.Token)
+    this.userModel = new User(user!.FirstName,user!.LastName,user!.Email,user!.Password,user!.Token,user!.ImagePath)
   }
-  userModel: User = new User("","","","","");
-  
+  userModel: User = new User("","","","","","");
+
 
   ngOnInit(): void {
     this.form=this.formBuilder.group({
@@ -44,7 +49,7 @@ export class UserSettingComponent implements OnInit {
       }
       var updateRequest= this.userService.UpdateUserByEmail(request).then(user=>{
         console.log(user)
-        this.userModel = new User(user!.FirstName,user!.LastName,user!.Email,user!.Password,user!.Token)
+        this.userModel = new User(user!.FirstName,user!.LastName,user!.Email,user!.Password,user!.Token,user!.ImagePath)
       })
     }
 
@@ -59,5 +64,28 @@ export class UserSettingComponent implements OnInit {
       var updateRequest=this.userService.UpdatePasswordByEmail(requestUpdate).then(user=>{
         console.log(user)
       })
+    }
+
+    processFile(imageInput: any){
+      console.log(imageInput)
+      const file: File = imageInput.files[0];
+      const reader = new FileReader();
+  
+      reader.addEventListener('load', (event: any) => {
+  
+        const user = this.userService.userValue
+        const requestUpload:UserImageCreateRequest={
+          Email:user!.Email,
+          Caption:"",
+          IsDefault:this.formPassword.value.NewPassword,
+          ImageFile:file,
+        }
+        this.userService.uploadImage(requestUpload).then(
+          (user) => {
+              this.userModel = new User(user!.FirstName,user!.LastName,user!.Email,user!.Password,user!.Token,user!.ImagePath)
+          });
+      });
+  
+      reader.readAsDataURL(file);
     }
 }
