@@ -11,7 +11,7 @@ namespace Contracts.UsersContracts
     {
         public string Email { get; set; }
         public string Caption { get; set; }
-        public bool IsDefault { get; set; }
+        public bool? IsDefault { get; set; }
         public IFormFile ImageFile { get; set; }
     }
 }

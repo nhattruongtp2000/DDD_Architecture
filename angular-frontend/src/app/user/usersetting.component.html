@@ -6,20 +6,22 @@
     <!-- column1 -->
     <div class="w-[10%]"></div>
     <div class="w-[30%] space-y-2">
-      <div class="background-white flex">
-        <div>
-          <img width="100px" class="p-2" src="https://localhost:7127/api/Users/5ec3fe80-907f-45db-9cac-f3c9421fedea" />
+      <div class="background-white">
+        <div class=" flex">
+          <div class="w-[50%]">
+            <img class="p-2" [src]="userModel.ImagePath" />
+          </div>
+  
+          <div class="ml-3 w-[50%]">
+            <div class="font-bold text-[20px]">{{ userModel.FirstName }}</div>
+            <div>Software Engineer</div>
+            <button class="bg-blue-600 rounded-[5px] p-[5px] text-white">
+              Change picture
+            </button>
+            <input   #imageInput type="file" />
+          </div>          
         </div>
-
-        <div class="ml-3">
-          <div class="font-bold text-[20px]">{{ userModel.FirstName }}</div>
-          <div>Software Engineer</div>
-          <button class="bg-blue-600 rounded-[5px] p-[5px] text-white">
-            Change picture
-          </button>
-          <input   #imageInput type="file" />
-        </div>
-        <button (click)="processFile(imageInput)" >Save</button>
+        <button class="ml-[45%] btn bg-blue-700 p-2 rounded-[5px]" (click)="processFile(imageInput)" >Save</button>
       </div>
 
       <div class="background-white space-y-2">

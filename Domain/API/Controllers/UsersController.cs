@@ -75,7 +75,7 @@ namespace API.Controllers
 
         [Route("upload-user-image")]
         [HttpPost]
-        public async Task<IActionResult> UploadImageUser( UserImageCreateRequest request)
+        public async Task<IActionResult> UploadImageUser( [FromForm]UserImageCreateRequest request)
         {
             var command = _mapper.Map<UserCommand>(request);
             var commandResult = await _mediator.Send(command);
@@ -83,8 +83,10 @@ namespace API.Controllers
             {
                 // write anything to modify
             }
+            var x = commandResult.Match(commandResult => Ok(_mapper.Map<DataResult>(commandResult)),
+           errors => Problem(errors));
             return commandResult.Match(commandResult => Ok(_mapper.Map<DataResult>(commandResult)),
-                errors => Problem(errors));
+           errors => Problem(errors));
         }
 
         [HttpGet("{id}")]

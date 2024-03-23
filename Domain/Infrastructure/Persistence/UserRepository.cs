@@ -139,7 +139,8 @@ namespace Infrastructure.Persistence
                         UserName = user.Email,
                         FirstName = user.FirstName,
                         LastName = user.LastName,
-                        Password = user.Password
+                        Password = user.Password,
+                        ImagePath = ""
                     };
                     var result = await _userManager.CreateAsync(userIdentity, user.Password);
 
@@ -232,19 +233,20 @@ namespace Infrastructure.Persistence
             }
         }
 
-        public async Task<bool> UploadImage(UserCommand request)
+        public async Task<User> UploadImage(UserCommand request)
         {
             var updateUser2 = (UserImageCreateRequest)request.userUpdate;
             var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == updateUser2.Email);
             if (user == null)
-                return false;
+                return null;
             var imagePath = await SaveFile(updateUser2.ImageFile);
             if (!string.IsNullOrEmpty(imagePath))
             {
                 user.ImagePath = imagePath;
-                return true;
+                _context.SaveChanges();
+                return user;
             }
-            return false;
+            return user;
         }
 
         private async Task<string> SaveFile(IFormFile file)

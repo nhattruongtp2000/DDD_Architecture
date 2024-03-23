@@ -20,7 +20,7 @@ export class UserSettingComponent implements OnInit {
   selectedFile!: ImageSnippet
   constructor(private userService:UserService,private formBuilder:FormBuilder) {
     const user = this.userService.userValue
-    this.userModel = new User(user!.FirstName,user!.LastName,user!.Email,user!.Password,user!.Token,user!.ImagePath)
+    this.userModel = new User(user!.FirstName,user!.LastName,user!.Email,user!.Password,user!.Token,"https://localhost:7127/api/Users/"+user!.ImagePath.slice(0,-4))
   }
   userModel: User = new User("","","","","","");
 
@@ -67,25 +67,25 @@ export class UserSettingComponent implements OnInit {
     }
 
     processFile(imageInput: any){
-      console.log(imageInput)
       const file: File = imageInput.files[0];
       const reader = new FileReader();
+      console.log(file)
   
       reader.addEventListener('load', (event: any) => {
   
         const user = this.userService.userValue
         const requestUpload:UserImageCreateRequest={
           Email:user!.Email,
-          Caption:"",
-          IsDefault:this.formPassword.value.NewPassword,
+          Caption:"true",
+          IsDefault:true,
           ImageFile:file,
         }
-        this.userService.uploadImage(requestUpload).then(
+        var userReturn = this.userService.uploadImage(requestUpload).then(
           (user) => {
-              this.userModel = new User(user!.FirstName,user!.LastName,user!.Email,user!.Password,user!.Token,user!.ImagePath)
-          });
+              this.userModel = new User(user!.FirstName,user!.LastName,user!.Email,user!.Password,user!.Token,"https://localhost:7127/api/Users/"+user!.ImagePath.slice(0,-4))
+              this.userService.changeLocalUserInfo(user as any);
+            });
       });
-  
       reader.readAsDataURL(file);
     }
 }

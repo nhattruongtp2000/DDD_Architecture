@@ -38,9 +38,7 @@ export class UserService{
             if(response.status=200)
             {
                 var data=response.data;
-                console.log(data)
-                const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token,data.ImagePath) 
-                console.log(userData)
+                const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token,data.imagePath) 
                 localStorage.setItem('user',JSON.stringify(userData))
                 this.userSubject.next(userData)
                 return userData;
@@ -49,6 +47,12 @@ export class UserService{
         })
     }
 
+    public changeLocalUserInfo(data:User){
+      const userData= new User(data.FirstName,data.LastName,data.Email,data.Password,data.Token,data.ImagePath) 
+      localStorage.setItem('user',JSON.stringify(userData))
+      this.userSubject.next(userData)
+    }
+    
     public getUserById( userId : string){
           return axios.post(this.url+userId).then(response=>{
             if(response.status=200)
@@ -94,23 +98,22 @@ export class UserService{
     }
     
     public uploadImage(requestUpload: UserImageCreateRequest) {
-      const formData = new FormData();
-      formData.append('ImageFile', requestUpload.ImageFile);
-      formData.append('Email', requestUpload.Email);
-      formData.append('Caption', requestUpload.Caption);
-      formData.append('IsDefault', "");
-      console.log(formData)
-      let headers = new Headers({ 'Content-Type': 'application/json' });    
-      headers.append('Content-Type', 'multipart/form-data');
-      return axios.post(this.urlUser+"/upload-user-image",formData,{
-        headers: {
-          'Content-Type': 'multipart/form-data' // <- HERE
-        }
-      }).then(response=>{
+      const request = new FormData();
+      request.append('ImageFile', requestUpload.ImageFile);
+      request.append('Email', requestUpload.Email);
+      request.append('Caption', requestUpload.Caption);
+      request.append('IsDefault', String(requestUpload.IsDefault));
+      console.log(request.getAll('ImageFile'))
+      console.log(request.getAll('Email'))
+      console.log(request.getAll('Caption'))
+      console.log(request.getAll('IsDefault'))
+
+      return axios.post(this.urlUser+"/upload-user-image",request).then(response=>{
         if(response.status=200)
         {
+          var data2=response;
           var data=response.data.data;
-          const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token,data.ImagePath) 
+          const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token,data.imagePath) 
         //  localStorage.setItem('user',JSON.stringify(userData))
          // this.userSubject.next(userData)
           return userData;
