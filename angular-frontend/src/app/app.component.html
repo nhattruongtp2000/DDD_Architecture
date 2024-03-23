@@ -1,0 +1,36 @@
+<div class="containers" *ngIf="user">
+    <div class="flex justify-between items-center mt-3">
+      <div class="ml-20 font-bold">
+        <a routerLink="/" routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}">Flowbite</a>
+      </div>
+
+      <div >
+        <ul class="flex space-x-5">
+          <li>Home</li>
+          <li>Company</li>
+          <li>Marketplace</li>
+          <li>Features</li>
+          <li>Team</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+<div>
+</div>
+      <div class="flex space-x-7 items-center  p-2 mr-10">
+        <a class="nav-item nav-link" routerLink="/app-user" routerLinkActive="active">Users</a>
+        <button class="btn btn-link nav-item nav-link" (click)="logout()">Logout</button>
+          <div>
+            <button class="bg-blue-600 rounded-[8px] text-white p-2" ><a routerLink="../app-register">Register</a></button>
+          </div>
+      </div>
+    </div>
+</div>
+
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+  <router-outlet></router-outlet>
+</div>
+  <!-- <nav>
+    <a routerLink="/app-login" routerLinkActive="active" class="text-blue-900 font-bold">Login here</a>
+    <a routerLink="/app-register" class="text-blue-900 font-bold">Register here</a>
+    </nav>
+    <router-outlet></router-outlet> -->

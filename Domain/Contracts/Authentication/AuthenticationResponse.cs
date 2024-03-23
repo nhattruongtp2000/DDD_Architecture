@@ -11,5 +11,6 @@ namespace Contracts.Authentication
         string FirstName,
         string LastName,
         string Email,
+        string ImagePath,
         string Token);
 }
