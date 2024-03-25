@@ -12,13 +12,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Protocols;
 using Infrastructure.Services;
 using Application.Common.Interfaces.Persistence;
-using Infrastructure.Persistence;
+using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Domain.Entites;
 using Persistence;
 using Microsoft.AspNetCore.Identity;
+using Application.Common.Interfaces.Payment;
+using Infrastructure.Repositories.Payment;
 
 namespace Infrastructure
 {
@@ -37,6 +39,7 @@ namespace Infrastructure
             .AddDefaultTokenProviders();
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPaymentRepository, PaymentRepository>();
 
             return services;
         }

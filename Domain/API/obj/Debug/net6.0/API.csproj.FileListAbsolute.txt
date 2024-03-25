@@ -149,7 +149,6 @@ D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.AspNe
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\Dapper.dll
-D:\DDD_Architecture\DDD_Architecture\Domain\API\obj\Debug\net6.0\API.MvcApplicationPartsAssemblyInfo.cs
 D:\DDD_Architecture\DDD_Architecture\Domain\API\bin\Debug\net6.0\API.staticwebassets.runtime.json
 D:\DDD_myproject\DDD_Architecture\Domain\API\bin\Debug\net6.0\appsettings.Development.json
 D:\DDD_myproject\DDD_Architecture\Domain\API\bin\Debug\net6.0\appsettings.json

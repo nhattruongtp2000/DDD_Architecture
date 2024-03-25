@@ -12,6 +12,7 @@ using Domain.Entites;
 using MediatR;
 using Newtonsoft.Json;
 using MapsterMapper;
+using Contracts.UsersContracts;
 
 namespace Application.Authentication.Commands.Register
 {
@@ -43,7 +44,7 @@ namespace Application.Authentication.Commands.Register
                 return Errors.User.PasswordIsInvalid;
 
             var token = registerUser.Item2;
-            return new AuthenticationResult(new Domain.Entites.User { FirstName = command.FirstName, LastName = command.LastName, Email = command.Email, Password = command.Password },
+            return new AuthenticationResult(new UserModel { FirstName = command.FirstName, LastName = command.LastName, Email = command.Email, Password = command.Password },
                 token
             );
         }

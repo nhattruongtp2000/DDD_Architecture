@@ -1,10 +1,8 @@
 ﻿using Application;
 using Application.Authentication.Commands.User;
 using Application.Authentication.Queries;
-using Application.User.Queries;
-using Application.Users;
+using Application.Authentication.Queries.Users;
 using Azure.Core;
-using Contracts.Authentication;
 using Contracts.UsersContracts;
 using MapsterMapper;
 using MediatR;
@@ -53,7 +51,8 @@ namespace API.Controllers
             {
                 // write anything to modify
             }
-
+            var x = commandResult.Match(commandResult => Ok(_mapper.Map<DataResult>(commandResult)),
+                errors => Problem(errors)); 
             return commandResult.Match(commandResult => Ok(_mapper.Map<DataResult>(commandResult)),
                 errors => Problem(errors));
 

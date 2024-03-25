@@ -20,7 +20,6 @@ var builder = WebApplication.CreateBuilder(args);
 }
 
 // Add services to the container.
-
 // Adding Authentication
 builder.Services.AddAuthentication(options =>
 {

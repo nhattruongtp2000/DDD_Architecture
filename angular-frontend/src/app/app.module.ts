@@ -11,6 +11,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { UserComponent } from './user/user.component';
 import { UserSettingComponent } from './user/usersetting.component';
+import { TransactionComponent } from './transaction/transaction.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { UserSettingComponent } from './user/usersetting.component';
     AppComponent,
     HomeComponent,
     UserComponent,
-    UserSettingComponent
+    UserSettingComponent,
+    TransactionComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

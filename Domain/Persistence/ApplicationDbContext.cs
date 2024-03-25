@@ -23,8 +23,8 @@ namespace Persistence
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuidBuilder)
         {
-            //optionsBuidBuilder.UseSqlServer("Data Source=DESKTOP-RG9IML0\\MYPC;Initial Catalog=DDD_Databse;Integrated Security=SSPI;TrustServerCertificate=true");
-            optionsBuidBuilder.UseSqlServer("Data Source=TRUONG\\SQLEXPRESS;Initial Catalog=DDD_Databse;Integrated Security=SSPI;TrustServerCertificate=true;Persist Security Info=True;");
+            optionsBuidBuilder.UseSqlServer("Data Source=DESKTOP-RG9IML0\\MYPC;Initial Catalog=DDD_Databse;Integrated Security=SSPI;TrustServerCertificate=true");
+            //optionsBuidBuilder.UseSqlServer("Data Source=TRUONG\\SQLEXPRESS;Initial Catalog=DDD_Databse;Integrated Security=SSPI;TrustServerCertificate=true;Persist Security Info=True;");
 
             optionsBuidBuilder.EnableSensitiveDataLogging();
 

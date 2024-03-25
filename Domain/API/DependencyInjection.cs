@@ -12,8 +12,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Protocols;
 using Infrastructure.Services;
 using Application.Common.Interfaces.Persistence;
-using Infrastructure.Persistence;
+using Infrastructure.Repositories;
 using API.Common.Mapping;
+using Mapster;
+using MapsterMapper;
+using System.Reflection;
 
 namespace API
 {
@@ -22,7 +25,12 @@ namespace API
         public static IServiceCollection AddPresentation(this IServiceCollection services)
         {
             services.AddControllers();
-            services.AddMapping();
+
+            var config = TypeAdapterConfig.GlobalSettings;
+            config.Scan(Assembly.GetExecutingAssembly());
+            services.AddSingleton(config);
+            services.AddSingleton<IMapper, Mapper>();
+
             return services;
         }
     }

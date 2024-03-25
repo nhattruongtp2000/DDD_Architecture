@@ -28,7 +28,16 @@ export interface UpdatePasswordRequest{
 export interface UserUpdateData{
   FirstName:string,
   LastName:string,
-  Email:string
+  Email:string,
+  PhoneNumber:string,
+  Address:string,
+  Country:string,
+  City:string,
+  BirthDay:Date,
+  Organization:string,
+  Role:string,
+  Department:string,
+  ZipCode:string,
 }
 
 export interface AuthenticationResponse{
@@ -51,4 +60,4 @@ export interface AuthenticationResponse{
       Caption:string;
       IsDefault:boolean;
       ImageFile :File;
-    }
+  }

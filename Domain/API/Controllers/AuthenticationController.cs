@@ -1,6 +1,6 @@
 ﻿using Application.Authentication.Commands;
 using Application.Authentication.Commands.Register;
-using Application.Authentication.Queries;
+using Application.Authentication.Queries.Login;
 using Application.Authentication.Queries.Token;
 using Azure.Core;
 using Contracts.Authentication;

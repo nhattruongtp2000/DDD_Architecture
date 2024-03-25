@@ -11,24 +11,18 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   form!:FormGroup
+  userModel: User;
+
   constructor(private userService:UserService,private formBuilder:FormBuilder
-  ,private router:Router ){ }
+  ,private router:Router ){ 
+    this.userModel=new User();
+  }
 
   ngOnInit(): void {
     this.form=this.formBuilder.group({
       email:['ailapronam2010@gmail.com',Validators.required],
       password:['Kiprao123*',Validators.required]
     })
-
-
-  }
-   user : User={
-    Email:'',
-    Password:'',
-    Token:"",
-    FirstName:"",
-    LastName:"",
-    ImagePath:""
   }
 
   handleChange(event: any){
@@ -51,23 +45,53 @@ export class LoginComponent implements OnInit {
 }
 
 export class User {
-  LastName:string;
-  Email:string;
-  Password:string;
-  Token:string;
-  FirstName:string;
-  ImagePath:string;
+  FirstName!:string;
+  LastName!:string;
+  Email!:string;
+  Password!:string;
+  PhoneNumber!:string;
+  Address!:string;
+  Country!:string;
+  City!:string;
+  BirthDay!:Date;
+  Organization!:string;
+  Role!:string;
+  Department!:string;
+  ZipCode!:string;
+  ImagePath!:string;
+  Token!:string;
 
 
-  constructor(firstName:string,lastName:string,email:string,password:string,token:string,imagePath:string){
+  constructor(){
+    // this.FirstName=firstName,
+    // this.LastName=lastName;
+    // this.Email=email;
+    // this.Password=password;
+    // this.Token=token;
+    // this.ImagePath=imagePath ;
+    // this.PhoneNumber=phoneNumber,
+    // this.Country=country;
+    // this.City=city;
+    // this.BirthDay=birthday;
+    // this.Role=role;
+    // this.Department=department;
+    // this.ZipCode=zipcode;
+    // this.Organization=organization;
+  }
+
+  setValue(firstName:string,lastName:string,email:string,password:string,token:string,address:string,imagePath:string){
     this.FirstName=firstName,
     this.LastName=lastName;
     this.Email=email;
     this.Password=password;
     this.Token=token;
-    this.ImagePath=imagePath;
+    this.Address=address;
+    this.ImagePath=(imagePath==null || imagePath=="" )? this.ImagePath:imagePath;
   }
 
+  setImage(image:string){
+    this.ImagePath=image
+  }
 }
 export interface LoginResult{
   FirstName:string;

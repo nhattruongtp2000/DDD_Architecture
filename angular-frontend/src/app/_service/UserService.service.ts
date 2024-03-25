@@ -38,7 +38,8 @@ export class UserService{
             if(response.status=200)
             {
                 var data=response.data;
-                const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token,data.imagePath) 
+                const userData= new User() 
+                userData.setValue(data.firstName,data.lastName,data.email,data.password,data.token,data.Address,data.imagePath)
                 localStorage.setItem('user',JSON.stringify(userData))
                 this.userSubject.next(userData)
                 return userData;
@@ -48,7 +49,8 @@ export class UserService{
     }
 
     public changeLocalUserInfo(data:User){
-      const userData= new User(data.FirstName,data.LastName,data.Email,data.Password,data.Token,data.ImagePath) 
+      const userData= new User()
+      userData.setValue(data.FirstName,data.LastName,data.Email,data.Password,data.Token,data.Address,data.ImagePath) 
       localStorage.setItem('user',JSON.stringify(userData))
       this.userSubject.next(userData)
     }
@@ -58,7 +60,8 @@ export class UserService{
             if(response.status=200)
             {
               var data=response.data;
-                const userData= new User(data.fistname,data.lastName,data.email,data.password,data.token,data.ImagePath) 
+                const userData= new User()
+                userData.setValue(data.FirstName,data.LastName,data.Email,data.Password,data.Token,data.Address,data.ImagePath) 
                 return userData;
             }
             return null;
@@ -73,7 +76,8 @@ export class UserService{
         {
           console.log(response)
           var data=response.data.data;
-          const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token,data.ImagePath) 
+          const userData= new User() 
+          userData.setValue(data.firstName,data.lastName,data.email,data.password,data.token,data.address,data.imagePath) 
           localStorage.setItem('user',JSON.stringify(userData))
           this.userSubject.next(userData)
           return userData;
@@ -88,7 +92,8 @@ export class UserService{
         if(response.status=200)
         {
           var data=response.data.data;
-          const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token,data.ImagePath) 
+          const userData= new User() 
+          userData.setValue(data.FirstName,data.LastName,data.Email,data.Password,data.Token,data.Address,data.ImagePath) 
         //  localStorage.setItem('user',JSON.stringify(userData))
          // this.userSubject.next(userData)
           return userData;
@@ -111,9 +116,10 @@ export class UserService{
       return axios.post(this.urlUser+"/upload-user-image",request).then(response=>{
         if(response.status=200)
         {
-          var data2=response;
           var data=response.data.data;
-          const userData= new User(data.firstName,data.lastName,data.email,data.password,data.token,data.imagePath) 
+           console.log(data)
+          const userData= new User() 
+          userData.setValue(data.firstName,data.lastName,data.email,data.password,data.token,data.address,data.imagePath) 
         //  localStorage.setItem('user',JSON.stringify(userData))
          // this.userSubject.next(userData)
           return userData;

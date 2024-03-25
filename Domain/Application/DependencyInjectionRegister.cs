@@ -20,7 +20,6 @@ namespace Application
         {
             services.AddMediatR(typeof(DependencyInjectionRegister).Assembly);
 
-
             services.AddScoped(
           typeof(IPipelineBehavior<,>),
           typeof(ValidationBehavior<,>));
