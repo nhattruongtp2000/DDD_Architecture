@@ -21,8 +21,10 @@ namespace API.Common.Mapping
             config.NewConfig<LoginRequest, LoginQuery>();
             config.NewConfig<UserRequest, UserQuery>();
             config.NewConfig<TokenModel, TokenQuery>();
-            config.NewConfig<OrderInfo, PaymentCommand>();
-            config.NewConfig<string, PaymentCommand>();
+            config.NewConfig<OrderInfo, PaymentCommand>()
+                .Map(order=>order.orderInfo,src=>src);
+            config.NewConfig<string, PaymentCommand>()
+                .Map(order=>order.orderInfo,src=>src);
 
             config.NewConfig<string, UserCommand>()
              .Map(dest => dest.userUpdate, src => src); ;

@@ -24,8 +24,17 @@ namespace Application.Authentication.Commands.Payment
         public async Task<ErrorOr<string>> Handle(PaymentCommand request, CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
+            var dataType = request.orderInfo?.GetType().Name;
+            if (dataType == null)
+            {
+                var data3 = await _paymentRepository.VNPayReturn();
+                if (data3 == null)
+                {
+                    return new ErrorOr<string>();
+                }
+            }
 
-            switch (request.GetType().ToString())
+            switch (dataType.ToString())
             {
                 case "OrderInfo":
                     var data = await _paymentRepository.VNPAY(_mapper.Map<OrderInfo>(request));
@@ -34,7 +43,6 @@ namespace Application.Authentication.Commands.Payment
                         return new ErrorOr<string>();
                     }
                     return data;
-
                     break;
                 case "string":
                     var data2 = await _paymentRepository.VNPayReturn();

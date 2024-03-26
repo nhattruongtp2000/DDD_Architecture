@@ -35,7 +35,7 @@ namespace API.Controllers
         [Route("VNPayReturn")]
         public async Task<IActionResult> VNPayReturn()
         {
-            var command = _mapper.Map<PaymentCommand>("");
+            var command =new  PaymentCommand(null);
             var dataReturn = await _mediator.Send(command);
             if (string.IsNullOrEmpty(dataReturn.Value))
                 return BadRequest();

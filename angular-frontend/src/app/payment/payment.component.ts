@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
+import { OrderInfo } from '../_model/User/UserRequest';
+import { PaymentService } from '../_service/PaymentSevice.service';
 
 @Component({
   selector: 'app-payment',
@@ -8,7 +10,7 @@ import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 })
 export class PaymentComponent implements OnInit {
   form !: FormGroup
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder,private paymentService:PaymentService) { }
 
   ngOnInit(): void {
     this.form=this.formBuilder.group({
@@ -21,7 +23,13 @@ export class PaymentComponent implements OnInit {
   }
 
   onSubmit(){
-    
+      var orderInfo = new OrderInfo()
+      orderInfo.setValue("999999",1000,"okok",new Date(),"1",1,"NCB","1","1")
+      this.paymentService.SendOrderPayMent(orderInfo).then(dataReturn=>{
+        console.log(dataReturn)
+        document.location.href=dataReturn.data.value
+
+      });
   }
 
 }
