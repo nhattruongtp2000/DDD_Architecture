@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Application.Authentication.Commands.Payment
 {
-    public class PaymentCommandHandler : IRequestHandler<PaymentCommand, ErrorOr<string>>
+    public class PaymentCommandHandler : IRequestHandler<PaymentCommand, ErrorOr<DataResult>>
     {
         private readonly IPaymentRepository _paymentRepository;
         private readonly IMapper _mapper;
@@ -21,7 +21,7 @@ namespace Application.Authentication.Commands.Payment
             _mapper = mapper;
         }
 
-        public async Task<ErrorOr<string>> Handle(PaymentCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<DataResult>> Handle(PaymentCommand request, CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
             var dataType = request.orderInfo?.GetType().Name;
@@ -30,31 +30,41 @@ namespace Application.Authentication.Commands.Payment
                 var data3 = await _paymentRepository.VNPayReturn();
                 if (data3 == null)
                 {
-                    return new ErrorOr<string>();
+                    return new ErrorOr<DataResult>();
                 }
+                       return new DataResult(
+             data3);
             }
-
+            if (dataType==null)
+            {
+                var data2 = await _paymentRepository.VNPayReturn();
+                if (data2 == null)
+                {
+                    return new ErrorOr<DataResult>();
+                }
+                return new ErrorOr<DataResult>();
+            }    
             switch (dataType.ToString())
             {
                 case "OrderInfo":
                     var data = await _paymentRepository.VNPAY(_mapper.Map<OrderInfo>(request));
                     if (data == null)
                     {
-                        return new ErrorOr<string>();
+                        return new ErrorOr<DataResult>();
                     }
-                    return data;
+                    return new DataResult(data);
                     break;
                 case "string":
                     var data2 = await _paymentRepository.VNPayReturn();
                     if (data2 == null)
                     {
-                        return new ErrorOr<string>();
+                        return new ErrorOr<DataResult>();
                     }
                     break;
 
             }
 
-            return new ErrorOr<string>();
+            return new ErrorOr<DataResult>();
         }
     }
 }

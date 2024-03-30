@@ -155,22 +155,29 @@ namespace Infrastructure.Repositories.Payment
             var orderId = vnpay.GetResponseData("vnp_TxnRef");
             long vnpayTranId = Convert.ToInt64(vnpay.GetResponseData("vnp_TransactionNo"));
             string vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
+            string vnp_TransactionNo = vnpay.GetResponseData("vnp_TransactionNo");
             string vnp_TransactionStatus = vnpay.GetResponseData("vnp_TransactionStatus");
             long vnp_Amount = Convert.ToInt64(vnpay.GetResponseData("vnp_Amount")) / 100;
             String vnp_SecureHash = _httpContextAccessor.HttpContext.Request.Query["vnp_SecureHash"].ToString();
             String TerminalID = _httpContextAccessor.HttpContext.Request.Query["vnp_TmnCode"].ToString();
             String bankCode = _httpContextAccessor.HttpContext.Request.Query["vnp_BankCode"].ToString();
+            string transactionInfo= vnpay.GetResponseData("vnp_OrderInfo");
 
             bool checkSignature = vnpay.ValidateSignature(vnp_SecureHash, vnp_HashSecret);
             VNPayReturnVm VNreturn = new VNPayReturnVm();
             if (checkSignature)
             {
                 VNreturn.OrderId = orderId;
-                VNreturn.TerminalId = TerminalID;
-                VNreturn.OrderId = orderId.ToString();
-                VNreturn.VnPayAmount = vnp_Amount.ToString();
-                VNreturn.BankCode = bankCode;
-                VNreturn.VnPayTranId = vnpayTranId.ToString();
+                VNreturn.OrderName = "Payment merchendise";
+                VNreturn.TransactionId = vnpayTranId.ToString();
+                VNreturn.TransactionInfo = transactionInfo;
+                VNreturn.TotalAmount = vnp_Amount;
+                VNreturn.CurrentCode = "VND";
+                VNreturn.TransactionResponseCode = "VND";
+                VNreturn.CurrentCode = vnp_ResponseCode;
+                VNreturn.Message = "Success";
+                VNreturn.TransactionNumber = vnp_TransactionNo.ToString();
+                VNreturn.Bank = bankCode.ToString();
             }
             else
             {

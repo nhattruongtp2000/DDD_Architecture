@@ -1,4 +1,5 @@
-﻿using Application.Authentication.Commands.Payment;
+﻿using Application;
+using Application.Authentication.Commands.Payment;
 using Contracts.Payment;
 using MapsterMapper;
 using MediatR;
@@ -26,7 +27,10 @@ namespace API.Controllers
         {
             var command = _mapper.Map<PaymentCommand>(info);
             var dataReturn = await _mediator.Send(command);
-            if (string.IsNullOrEmpty(dataReturn.Value))
+
+            var dataMapper = _mapper.Map<DataResult>(dataReturn.Value);
+
+            if (string.IsNullOrEmpty(dataMapper.Data))
                 return BadRequest();
             return Ok(dataReturn);
         }
@@ -35,11 +39,40 @@ namespace API.Controllers
         [Route("VNPayReturn")]
         public async Task<IActionResult> VNPayReturn()
         {
-            var command =new  PaymentCommand(null);
-            var dataReturn = await _mediator.Send(command);
-            if (string.IsNullOrEmpty(dataReturn.Value))
+            try
+            {
+                var command = new PaymentCommand(null);
+                var dataReturn = await _mediator.Send(command);
+                var dataMapper = _mapper.Map<DataResult>(dataReturn.Value);
+
+                if (dataMapper.Data==null)
+                    return BadRequest();
+                return Ok(dataReturn);
+            }
+            catch (Exception ex)
+            {
+                    return BadRequest();
+            }
+        }
+
+        [HttpPost]
+        [Route("AddPayment")]
+        public async Task<IActionResult> IPN()
+        {
+            try
+            {
+                //var command = new PaymentCommand(null);
+                //var dataReturn = await _mediator.Send(command);
+                //var dataMapper = _mapper.Map<DataResult>(dataReturn.Value);
+
+                //if (dataMapper.Data == null)
+                //    return BadRequest();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
                 return BadRequest();
-            return Ok(dataReturn);
+            }
         }
     }
 }

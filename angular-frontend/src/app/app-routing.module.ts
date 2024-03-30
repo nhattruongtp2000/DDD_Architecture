@@ -9,8 +9,7 @@ import { UserComponent } from './user/user.component';
 import { UserSettingComponent } from './user/usersetting.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { PaymentComponent } from './payment/payment.component';
-
-
+import { PaymentReturnComponent } from './payment/payment-return.component';
 const accountModule = () => import('./account/account.module').then(x => x.AccountModule);
 const routes: Routes = [
   {
@@ -22,6 +21,7 @@ const routes: Routes = [
      { path: 'app-user', component: UserComponent, canActivate:[AuthGuard]},
      { path: 'app-usersetting', component: UserSettingComponent, canActivate:[AuthGuard]},
      { path: 'app-payment', component: PaymentComponent},
+     { path: 'app-payment-return', component: PaymentReturnComponent},
 
 
       // otherwise redirect to home

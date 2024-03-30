@@ -8,5 +8,5 @@ using System.Threading.Tasks;
 
 namespace Application.Authentication.Commands.Payment
 {
-    public record PaymentCommand(dynamic orderInfo) : IRequest<ErrorOr<string>>;
+    public record PaymentCommand(dynamic orderInfo) : IRequest<ErrorOr<DataResult>>;
 }

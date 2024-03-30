@@ -11,6 +11,20 @@ export interface LoginRequest {
   Password: string;
 }
 
+export class OrderInfoReturn {
+  OrderId !: string;
+  OrderName !: string;
+  TransactionId !: string;
+  TransactionInfo !: string;
+  TotalAmount !: number;
+  CurrentCode !: string;
+  TransactionResponseCode !:string;
+  Message !:string;
+  TransactionNumber!:string;
+  Bank !: string;
+
+}
+
 export class OrderInfo {
   OrderId !: string;
   TotalAmount !: number;
