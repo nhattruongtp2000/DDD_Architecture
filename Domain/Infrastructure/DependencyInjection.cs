@@ -21,6 +21,8 @@ using Persistence;
 using Microsoft.AspNetCore.Identity;
 using Application.Common.Interfaces.Payment;
 using Infrastructure.Repositories.Payment;
+using Application.Common.Interfaces.Product;
+using Infrastructure.Repositories.Product;
 
 namespace Infrastructure
 {
@@ -40,6 +42,7 @@ namespace Infrastructure
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPaymentRepository, PaymentRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             return services;
         }

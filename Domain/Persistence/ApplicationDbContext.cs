@@ -12,6 +12,9 @@ namespace Persistence
     {
         private string _connectionString = "";
         public DbSet<User> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetails> OrderDetails { get; set; }
 
         public IEnumerable<T> ExecuteQuery<T>(string tsql)
         {

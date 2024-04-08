@@ -7,17 +7,15 @@ namespace Domain.Orders
         {
 
         }
-        internal LineItem(Guid id, Guid orderId, Guid productId, Money price)
+        internal LineItem(Guid id, Guid orderId, Guid productId)
         {
             Id = id;
             OrderId = orderId;
             ProductId = productId;
-            Price = price;
         }
 
         public Guid Id { get; private set; }
         public Guid OrderId { get; private set; }
         public Guid ProductId { get; private set; }
-        public Money Price { get; private set; }
     }
 }

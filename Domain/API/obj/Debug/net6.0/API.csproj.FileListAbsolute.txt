@@ -265,3 +265,4 @@ D:\DDD_myproject\DDD_Architecture\Domain\API\obj\Debug\net6.0\refint\API.dll
 D:\DDD_myproject\DDD_Architecture\Domain\API\obj\Debug\net6.0\API.pdb
 D:\DDD_myproject\DDD_Architecture\Domain\API\obj\Debug\net6.0\API.genruntimeconfig.cache
 D:\DDD_myproject\DDD_Architecture\Domain\API\obj\Debug\net6.0\ref\API.dll
+D:\DDD_Architecture\DDD_Architecture\Domain\API\obj\Debug\net6.0\API.MvcApplicationPartsAssemblyInfo.cs

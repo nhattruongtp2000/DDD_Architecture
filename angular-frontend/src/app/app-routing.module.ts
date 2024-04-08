@@ -10,25 +10,44 @@ import { UserSettingComponent } from './user/usersetting.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentReturnComponent } from './payment/payment-return.component';
-const accountModule = () => import('./account/account.module').then(x => x.AccountModule);
+import { AdminlayoutComponent } from './admin/adminlayout.component';
+import { AdminDaboardComponent } from './admin-daboard/admin-daboard.component';
+import { AdminProducts } from './admin/products.component';
+import { AddProductComponent } from './admin/addproduct.component';
+
+const accountModule = () =>
+  import('./account/account.module').then((x) => x.AccountModule);
 const routes: Routes = [
   {
-     path: '', component: HomeComponent, canActivate: [AuthGuard] },
-     { path: 'account', loadChildren: accountModule },
-     { path: 'app-login', component: LoginComponent },
-     { path: 'app-register', component: RegisterComponent },
-     { path: 'app-transaction', component: TransactionComponent },
-     { path: 'app-user', component: UserComponent, canActivate:[AuthGuard]},
-     { path: 'app-usersetting', component: UserSettingComponent, canActivate:[AuthGuard]},
-     { path: 'app-payment', component: PaymentComponent},
-     { path: 'app-payment-return', component: PaymentReturnComponent},
-
-
-      // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    path: '',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: 'account', loadChildren: accountModule },
+  { path: 'app-login', component: LoginComponent },
+  { path: 'app-register', component: RegisterComponent },
+  { path: 'app-transaction', component: TransactionComponent },
+  { path: 'app-user', component: UserComponent, canActivate: [AuthGuard] },
+  {
+    path: 'app-usersetting',
+    component: UserSettingComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: 'app-payment', component: PaymentComponent },
+  { path: 'app-payment-return', component: PaymentReturnComponent },
+  {
+    path: "admin", component: AdminlayoutComponent, children: [
+      { path: 'app-admin-daboard', component: AdminDaboardComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+      { path: 'app-adminproducts', component: AdminProducts, pathMatch: 'full', canActivate: [AuthGuard] },
+      { path: 'app-addproduct', component: AddProductComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+    
+    ]
+  },
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

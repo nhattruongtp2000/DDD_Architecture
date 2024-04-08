@@ -1,5 +1,4 @@
-﻿using Domain.Products;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,11 +24,7 @@ namespace Domain.Orders
             };
             return order;
         }
-        public void Add(Product product)
-        {
-            var lineItem = new LineItem(Guid.NewGuid(), Id, product.Id, product.Price);
-            _lineItems.Add(lineItem);
-        }
+
 
 
     }

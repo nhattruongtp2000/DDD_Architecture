@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_service/UserService.service';
 import { User } from '../login/login.component';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators,ReactiveFormsModule  } from '@angular/forms';
 import {
   UpdatePasswordRequest,
   UserUpdateData,

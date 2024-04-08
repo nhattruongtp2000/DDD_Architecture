@@ -13,6 +13,11 @@ import { UserComponent } from './user/user.component';
 import { UserSettingComponent } from './user/usersetting.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { PaymentComponent } from './payment/payment.component';
+import { ListProductsComponent } from './list-products/list-products.component';
+import { AdminlayoutComponent } from './admin/adminlayout.component';
+import { AdminDaboardComponent } from './admin-daboard/admin-daboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -22,7 +27,10 @@ import { PaymentComponent } from './payment/payment.component';
     UserComponent,
     UserSettingComponent,
     TransactionComponent,
-    PaymentComponent
+    PaymentComponent,
+    ListProductsComponent,
+    AdminlayoutComponent,
+    AdminDaboardComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +38,9 @@ import { PaymentComponent } from './payment/payment.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [
 

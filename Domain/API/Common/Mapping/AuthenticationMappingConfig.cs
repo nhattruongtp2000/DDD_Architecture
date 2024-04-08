@@ -7,6 +7,7 @@ using Application.Authentication.Queries.Token;
 using Application.Authentication.Queries.Users;
 using Contracts.Authentication;
 using Contracts.Payment;
+using Contracts.Products;
 using Contracts.UsersContracts;
 using Domain.Entites;
 using Mapster;
@@ -25,6 +26,9 @@ namespace API.Common.Mapping
                 .Map(order=>order.orderInfo,src=>src);
             config.NewConfig<string, PaymentCommand>()
                 .Map(order=>order.orderInfo,src=>src);
+
+            config.NewConfig<AddProductRequest, ProductCommand>()
+           .Map(request => request.productRequest, src => src);
 
             config.NewConfig<string, UserCommand>()
              .Map(dest => dest.userUpdate, src => src); ;
@@ -45,6 +49,11 @@ namespace API.Common.Mapping
             config.NewConfig<AuthenticationResult, AuthenticationResponse>()
                 .Map(dest => dest.Token, src => src.Token)
                 .Map(dest => dest, src => src.User);
+
+            config.NewConfig<Product, AddProductRequest>();
+
+            config.NewConfig<List<Product>, List<ProductModel>>();
+
         }
     }
 }

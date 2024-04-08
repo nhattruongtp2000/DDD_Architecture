@@ -1,0 +1,58 @@
+<div >
+    <h1>All products</h1>
+    <div class="flex">
+        <input placeholder="Search for proucts" class="bg-gray-100 px-[20px] py-[3px]  border-[1px] rounded-[5px]" type="text"/>
+        <button (click)="openDialog()" class="ml-auto bg-blue-500 rounded-[4px] p-[5px] text-white">+ Add product</button>
+    </div>
+
+    <div class="">
+        <table class="table-auto w-[100%] text-[10px]">
+            <thead>
+                <tr class="text-left bg-gray-100 h-[30px]">
+                    <th>
+                        <input type="checkbox"/>
+                    </th>
+                    <th>
+                        PRODUCT NAME
+                    </th>
+                    <th>
+                        TECHNOLOGY
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        PRICE
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox"/>
+                    </td>
+                    <td>
+                        <div class="grid">
+                            <p>Education Dashboard</p>
+                            <p>Html templates</p>
+                        </div>
+                    </td>
+                    <td>
+                        <p>Angular</p>
+                    </td>
+                    <td>
+                        <p>#194556</p>
+                    </td>
+                    <td>
+                        <p>$149</p>
+                    </td>
+                    <td class="flex gap-x-2">
+                        <button class="bg-blue-500 rounded-[4px] p-[5px] text-white">Edit item</button>
+                        <button class="bg-red-500 rounded-[4px] p-[5px] text-white">Delete item</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
