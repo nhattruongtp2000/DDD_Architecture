@@ -1,55 +1,63 @@
-<div >
-    <h1>All products</h1>
-    <div class="flex">
-        <input placeholder="Search for proucts" class="bg-gray-100 px-[20px] py-[3px]  border-[1px] rounded-[5px]" type="text"/>
-        <button (click)="openDialog()" class="ml-auto bg-blue-500 rounded-[4px] p-[5px] text-white">+ Add product</button>
+<div>
+    <p class="text-[20px] font-medium">All products</p>
+    <div class="flex my-[20px]">
+        <input [(ngModel)]="valueSearch" (ngModelChange)="filterOnChange($event)" placeholder="Search for proucts"
+            class="border border-gray-300 w-[300px] h-[40px] bg-gray-100 px-[20px] py-[3px]  border-[1px] rounded-[5px]"
+            type="text" />
+            <button (click)="removeItems()">Remove</button>
+        <button (click)="openDialog()" class="ml-auto bg-blue-800 rounded-[8px] p-[5px] text-white">+ Add
+            product</button>
     </div>
 
-    <div class="">
-        <table class="table-auto w-[100%] text-[10px]">
+    <div class="text-[18px]">
+        <table class=" w-[100%] border-t ">
             <thead>
-                <tr class="text-left bg-gray-100 h-[30px]">
-                    <th>
-                        <input type="checkbox"/>
+                <tr class="text-left bg-gray-200 h-[50px] text-[12px] font-medium text-gray-500">
+                    <th class="font-normal">
+                        <input type="checkbox" (change)="checkboxChanged($event)" />
                     </th>
-                    <th>
+                    <th class="font-normal">
                         PRODUCT NAME
                     </th>
-                    <th>
-                        TECHNOLOGY
+                    <th class="font-normal">
+                        Description
                     </th>
-                    <th>
+                    <th class="font-normal">
                         ID
                     </th>
-                    <th>
+                    <th class="font-normal">
                         PRICE
                     </th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <input type="checkbox"/>
+                <tr *ngFor="let product of filterProducts">
+                    <td class="border-t border-b">
+                        <input type="checkbox" [(ngModel)]="product.IsChecked" />
                     </td>
-                    <td>
-                        <div class="grid">
-                            <p>Education Dashboard</p>
+                    <td class="border-t border-b grid">
+                        <div class="grid gap-y-[-5px]">
+                            <p class="font-medium" >{{product.ProductName}}</p>
                             <p>Html templates</p>
                         </div>
                     </td>
-                    <td>
-                        <p>Angular</p>
+                    <td class="border-t border-b">
+                        <p>{{product.Description}}</p>
                     </td>
-                    <td>
-                        <p>#194556</p>
+                    <td class="border-t border-b">
+                        <p>{{product.ProductId}}</p>
                     </td>
-                    <td>
-                        <p>$149</p>
+                    <td class="border-t border-b">
+                        <p>{{product.Price }}</p>
                     </td>
-                    <td class="flex gap-x-2">
-                        <button class="bg-blue-500 rounded-[4px] p-[5px] text-white">Edit item</button>
-                        <button class="bg-red-500 rounded-[4px] p-[5px] text-white">Delete item</button>
+                    <td class=" border-t border-b">
+                        <div class="flex gap-x-2">
+                            <button (click)="editItem(product)"
+                                class="bg-blue-700 rounded-[7px] p-[5px] text-white">Edit item</button>
+                            <button (click)="deleteItem(product)"
+                                class="bg-red-700 rounded-[7px] p-[5px] text-white">Delete item</button>
+                        </div>
                     </td>
                 </tr>
             </tbody>

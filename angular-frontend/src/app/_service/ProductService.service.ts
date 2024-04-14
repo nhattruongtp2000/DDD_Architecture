@@ -24,7 +24,8 @@ export class ProductService {
           productData.description,
           productData.content,
           productData.price,
-          productData.PhotoReview
+          productData.PhotoReview,
+          productData.isChecked
       );
   });
   return products;

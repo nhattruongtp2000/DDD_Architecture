@@ -37,9 +37,9 @@ const routes: Routes = [
   { path: 'app-payment-return', component: PaymentReturnComponent },
   {
     path: "admin", component: AdminlayoutComponent, children: [
-      { path: 'app-admin-daboard', component: AdminDaboardComponent, pathMatch: 'full', canActivate: [AuthGuard] },
-      { path: 'app-adminproducts', component: AdminProducts, pathMatch: 'full', canActivate: [AuthGuard] },
-      { path: 'app-addproduct', component: AddProductComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+      { path: 'app-admin-daboard', component: AdminDaboardComponent, pathMatch: 'full',  },
+      { path: 'app-adminproducts', component: AdminProducts, pathMatch: 'full',  },
+      { path: 'app-addproduct', component: AddProductComponent, pathMatch: 'full'  },
     
     ]
   },

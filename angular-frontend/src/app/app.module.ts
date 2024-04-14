@@ -18,7 +18,8 @@ import { AdminlayoutComponent } from './admin/adminlayout.component';
 import { AdminDaboardComponent } from './admin-daboard/admin-daboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { AdminProducts } from './admin/products.component';
+import { AddProductComponent } from './admin/addproduct.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     PaymentComponent,
     ListProductsComponent,
     AdminlayoutComponent,
-    AdminDaboardComponent
+    AdminDaboardComponent,
+    AdminProducts,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     HttpClientModule,
     CommonModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [
 

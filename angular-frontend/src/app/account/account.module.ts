@@ -18,7 +18,7 @@ import { LayoutComponent } from '../layout/layout.component';
         ReactiveFormsModule,
         HttpClientModule,
         CommonModule,
-    ],
+        BrowserModule],
     declarations: [
         LayoutComponent,
         LoginComponent,
