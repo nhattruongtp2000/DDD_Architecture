@@ -160,147 +160,31 @@
           <div>PHỤ KIỆN TỦ BẾP - TỦ ÁO</div>
         </div>
 
-        <div class="flex flex-wrap gap-x-[10px]">
-          <div class="w-[calc(33%-10px)]">
-            <div class="relative overflow-hidden">
+        <div class="flex flex-wrap gap-x-[10px] mt-[15px]">
+          <div *ngFor="let product of products" class="w-[calc(33%-10px)] hover:border border-orange-400 p-1">
+            <a class="relative block overflow-hidden">
               <span
                 class="absolute -rotate-45 top-[10px] -left-[22px] bg-red-400 text-[12px] px-8 py-1 z-50"
               >
-                okok</span
+                {{ product.ProductName }}</span
               >
               <img src="assets/img/100_mp02v-dOr9PbBNiD.webp" />
-            </div>
-            <p class="font-bold">Kệ xoong nồi Garis inox 304 vách hộp</p>
-            <div class="flex justify-between">
-              <div class="flex items-end gap-x-3">
-                <p class="text-red-600">2.855.999d</p>
-                <p class="line-through">4.390.000d</p>
+            </a>
+            <div class="mt-5">
+              <p class="font-medium ">{{ product.ProductName }}</p>
+              <div class="flex items-center justify-between mt-2">
+                <div class="flex flex-wrap gap-x-3 items-end ">
+                  <p class=" font-medium leading-6  text-red-600 md:text-[20px] ">{{ product.Price }}
+                  <span>d</span></p>
+                  <p class="line-through md:text-[14px] ">{{ product.Price }}
+                  <span>d</span></p>
+                </div>
+                <a class="md:w-[32px] bg-gray-400 hover:bg-yellow-400 ">
+                  <img class="cursor-pointer p-2" src="assets/img/shopping-cart.png" w alt="" />
+                </a>
               </div>
-              <a class=" md:w-[32px] bg-gray-400 hover:bg-yellow-600">
-                <img src="assets/img/shopping-cart.png" w alt="" />
-              </a>
+             
             </div>
-          </div>
-          <div class="w-[calc(33%-10px)]">
-            <div class="relative overflow-hidden">
-              <span
-                class="absolute -rotate-45 top-[10px] -left-[22px] bg-red-400 text-[12px] px-8 py-1 z-50"
-              >
-                okok</span
-              >
-              <img src="assets/img/100_mp02v-dOr9PbBNiD.webp" />
-            </div>
-            <p class="font-bold">Kệ xoong nồi Garis inox 304 vách hộp</p>
-          </div>
-          <div class="w-[calc(33%-10px)]">
-            <div class="relative overflow-hidden">
-              <span
-                class="absolute -rotate-45 top-[10px] -left-[22px] bg-red-400 text-[12px] px-8 py-1 z-50"
-              >
-                okok</span
-              >
-              <img src="assets/img/100_mp02v-dOr9PbBNiD.webp" />
-            </div>
-            <p class="font-bold">Kệ xoong nồi Garis inox 304 vách hộp</p>
-          </div>
-          <div class="w-[calc(33%-10px)]">
-            <div class="relative overflow-hidden">
-              <span
-                class="absolute -rotate-45 top-[10px] -left-[22px] bg-red-400 text-[12px] px-8 py-1 z-50"
-              >
-                okok</span
-              >
-              <img src="assets/img/100_mp02v-dOr9PbBNiD.webp" />
-            </div>
-            <p class="font-bold">Kệ xoong nồi Garis inox 304 vách hộp</p>
-          </div>
-          <div class="w-[calc(33%-10px)]">
-            <div class="relative overflow-hidden">
-              <span
-                class="absolute -rotate-45 top-[10px] -left-[22px] bg-red-400 text-[12px] px-8 py-1 z-50"
-              >
-                okok</span
-              >
-              <img src="assets/img/100_mp02v-dOr9PbBNiD.webp" />
-            </div>
-            <p class="font-bold">Kệ xoong nồi Garis inox 304 vách hộp</p>
-          </div>
-          <div class="w-[calc(33%-10px)]">
-            <div class="relative overflow-hidden">
-              <span
-                class="absolute -rotate-45 top-[10px] -left-[22px] bg-red-400 text-[12px] px-8 py-1 z-50"
-              >
-                okok</span
-              >
-              <img src="assets/img/100_mp02v-dOr9PbBNiD.webp" />
-            </div>
-            <p class="font-bold">Kệ xoong nồi Garis inox 304 vách hộp</p>
-          </div>
-          <div class="w-[calc(33%-10px)]">
-            <div class="relative overflow-hidden">
-              <span
-                class="absolute -rotate-45 top-[10px] -left-[22px] bg-red-400 text-[12px] px-8 py-1 z-50"
-              >
-                okok</span
-              >
-              <img src="assets/img/100_mp02v-dOr9PbBNiD.webp" />
-            </div>
-            <p class="font-bold">Kệ xoong nồi Garis inox 304 vách hộp</p>
-          </div>
-          <div class="w-[calc(33%-10px)]">
-            <div class="relative overflow-hidden">
-              <span
-                class="absolute -rotate-45 top-[10px] -left-[22px] bg-red-400 text-[12px] px-8 py-1 z-50"
-              >
-                okok</span
-              >
-              <img src="assets/img/100_mp02v-dOr9PbBNiD.webp" />
-            </div>
-            <p class="font-bold">Kệ xoong nồi Garis inox 304 vách hộp</p>
-          </div>
-          <div class="w-[calc(33%-10px)]">
-            <div class="relative overflow-hidden">
-              <span
-                class="absolute -rotate-45 top-[10px] -left-[22px] bg-red-400 text-[12px] px-8 py-1 z-50"
-              >
-                okok</span
-              >
-              <img src="assets/img/100_mp02v-dOr9PbBNiD.webp" />
-            </div>
-            <p class="font-bold">Kệ xoong nồi Garis inox 304 vách hộp</p>
-          </div>
-          <div class="w-[calc(33%-10px)]">
-            <div class="relative overflow-hidden">
-              <span
-                class="absolute -rotate-45 top-[10px] -left-[22px] bg-red-400 text-[12px] px-8 py-1 z-50"
-              >
-                okok</span
-              >
-              <img src="assets/img/100_mp02v-dOr9PbBNiD.webp" />
-            </div>
-            <p class="font-bold">Kệ xoong nồi Garis inox 304 vách hộp</p>
-          </div>
-          <div class="w-[calc(33%-10px)]">
-            <div class="relative overflow-hidden">
-              <span
-                class="absolute -rotate-45 top-[10px] -left-[22px] bg-red-400 text-[12px] px-8 py-1 z-50"
-              >
-                okok</span
-              >
-              <img src="assets/img/100_mp02v-dOr9PbBNiD.webp" />
-            </div>
-            <p class="font-bold">Kệ xoong nồi Garis inox 304 vách hộp</p>
-          </div>
-          <div class="w-[calc(33%-10px)]">
-            <div class="relative overflow-hidden">
-              <span
-                class="absolute -rotate-45 top-[10px] -left-[22px] bg-red-400 text-[12px] px-8 py-1 z-50"
-              >
-                okok</span
-              >
-              <img src="assets/img/100_mp02v-dOr9PbBNiD.webp" />
-            </div>
-            <p class="font-bold">Kệ xoong nồi Garis inox 304 vách hộp</p>
           </div>
         </div>
       </div>

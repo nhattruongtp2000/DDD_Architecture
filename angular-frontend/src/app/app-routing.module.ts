@@ -14,7 +14,7 @@ import { AdminlayoutComponent } from './admin/adminlayout.component';
 import { AdminDaboardComponent } from './admin-daboard/admin-daboard.component';
 import { AdminProducts } from './admin/products.component';
 import { AddProductComponent } from './admin/addproduct.component';
-
+import { ListProductsComponent } from './list-products/list-products.component';
 const accountModule = () =>
   import('./account/account.module').then((x) => x.AccountModule);
 const routes: Routes = [
@@ -33,6 +33,7 @@ const routes: Routes = [
     component: UserSettingComponent,
     canActivate: [AuthGuard],
   },
+  {path:'app-list-products',component:ListProductsComponent},
   { path: 'app-payment', component: PaymentComponent },
   { path: 'app-payment-return', component: PaymentReturnComponent },
   {
