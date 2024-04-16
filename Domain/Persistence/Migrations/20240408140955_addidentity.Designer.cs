@@ -149,10 +149,10 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IdBrand")
+                    b.Property<int>("BrandId")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdCategory")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsGift")

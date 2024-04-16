@@ -83,7 +83,7 @@ namespace Persistence.Migrations
                 oldType: "bit");
 
             migrationBuilder.AlterColumn<int>(
-                name: "IdCategory",
+                name: "CategoryId",
                 table: "Products",
                 type: "int",
                 nullable: true,
@@ -91,7 +91,7 @@ namespace Persistence.Migrations
                 oldType: "int");
 
             migrationBuilder.AlterColumn<int>(
-                name: "IdBrand",
+                name: "BrandId",
                 table: "Products",
                 type: "int",
                 nullable: true,

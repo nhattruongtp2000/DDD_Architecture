@@ -35,3 +35,16 @@ D:\DDD_myproject\DDD_Architecture\Domain\Domain\obj\Debug\net6.0\Domain.dll
 D:\DDD_myproject\DDD_Architecture\Domain\Domain\obj\Debug\net6.0\refint\Domain.dll
 D:\DDD_myproject\DDD_Architecture\Domain\Domain\obj\Debug\net6.0\Domain.pdb
 D:\DDD_myproject\DDD_Architecture\Domain\Domain\obj\Debug\net6.0\ref\Domain.dll
+E:\DDD_Architecture\DDD_Architecture\Domain\Domain\bin\Debug\net6.0\Domain.deps.json
+E:\DDD_Architecture\DDD_Architecture\Domain\Domain\bin\Debug\net6.0\Domain.dll
+E:\DDD_Architecture\DDD_Architecture\Domain\Domain\bin\Debug\net6.0\Domain.pdb
+E:\DDD_Architecture\DDD_Architecture\Domain\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+E:\DDD_Architecture\DDD_Architecture\Domain\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\DDD_Architecture\DDD_Architecture\Domain\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+E:\DDD_Architecture\DDD_Architecture\Domain\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+E:\DDD_Architecture\DDD_Architecture\Domain\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+E:\DDD_Architecture\DDD_Architecture\Domain\Domain\obj\Debug\net6.0\Domain.sourcelink.json
+E:\DDD_Architecture\DDD_Architecture\Domain\Domain\obj\Debug\net6.0\Domain.dll
+E:\DDD_Architecture\DDD_Architecture\Domain\Domain\obj\Debug\net6.0\refint\Domain.dll
+E:\DDD_Architecture\DDD_Architecture\Domain\Domain\obj\Debug\net6.0\Domain.pdb
+E:\DDD_Architecture\DDD_Architecture\Domain\Domain\obj\Debug\net6.0\ref\Domain.dll

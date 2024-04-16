@@ -149,7 +149,7 @@ namespace Persistence.Migrations
                     b.Property<int?>("IdBrand")
                         .HasColumnType("int");
 
-                    b.Property<int?>("IdCategory")
+                    b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<bool?>("IsGift")

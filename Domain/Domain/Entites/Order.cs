@@ -23,7 +23,7 @@ namespace Domain.Entites
         public DateTime OrderDay { get; set; }
 
         public decimal TotalPice { get; set; }
-        public string Status { get; set; }
+        public int Status { get; set; }
 
         public string PaymentType { get; set; }
         public List<OrderDetails> OrderDetails { get; set; }
