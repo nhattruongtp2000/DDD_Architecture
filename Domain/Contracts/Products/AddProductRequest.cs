@@ -9,10 +9,10 @@ namespace Contracts.Products
 {
     public class AddProductRequest
     {
-        public string  ProductName { get; set;}
-        public string Description { get; set; }
-        public string Content { get; set; }
-        public decimal Price { get; set; }
-        public IFormFile PhotoReview { get; set; }
+        public string?  ProductName { get; set;}
+        public string? Description { get; set; }
+        public string? Content { get; set; }
+        public decimal? Price { get; set; }
+        public IFormFile? PhotoReview { get; set; }
     }
 }

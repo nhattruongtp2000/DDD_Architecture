@@ -55,5 +55,35 @@ namespace API.Controllers
                 return BadRequest();
             return Ok(dataMapper);
         }
+
+        [HttpGet("image/{ProductId}")]
+        public ActionResult Get(string ProductId)
+        {
+            var files = Directory.GetFiles(@"wwwroot\assets\img\products");
+            foreach (var file in files)
+            {
+                if (file.Contains(ProductId.ToString()))
+                {
+                    return File(System.IO.File.ReadAllBytes(file), "image/jpeg");
+                }
+            }
+            return null;
+        }
+
+        [HttpDelete("{ProductId}")]
+        public async Task<IActionResult> DeleteProduct(string ProductId)
+        {
+            var query = new ProductCommand(ProductId);
+            var commandResult = await _mediator.Send(query);
+            if (commandResult.IsError)
+            {
+                // write anything to modify
+            }
+            var dataMapper = _mapper.Map<DataResult>(commandResult.Value);
+
+            if (dataMapper.Data == null)
+                return BadRequest();
+            return Ok(dataMapper);
+        } 
     }
 }

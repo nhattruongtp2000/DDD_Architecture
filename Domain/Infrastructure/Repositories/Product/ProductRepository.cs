@@ -21,7 +21,7 @@ namespace Infrastructure.Repositories.Product
         private readonly IMapper _mapper;
         private readonly string _productContentFolder;
         private const string PRODUCT_CONTENT_FOLDER_NAME = "assets\\img\\products";
-        public ProductRepository(IWebHostEnvironment webHostEnvironment,IMapper mapper)
+        public ProductRepository(IWebHostEnvironment webHostEnvironment, IMapper mapper)
         {
             _mapper = mapper;
             _productContentFolder = Path.Combine(webHostEnvironment.WebRootPath, PRODUCT_CONTENT_FOLDER_NAME);
@@ -34,10 +34,14 @@ namespace Infrastructure.Repositories.Product
                 if (request == null)
                     return false;
                 var product = _mapper.Map<Domain.Entites.Product>(request);
-                var imagePath = await SaveFile(request.PhotoReview);
-                if (!string.IsNullOrEmpty(imagePath))
+
+                if (request.PhotoReview == null)
                 {
-                    product.PhotoReview = imagePath;
+                    var imagePath = await SaveFile(request.PhotoReview, product.ProductId.ToString());
+                    if (!string.IsNullOrEmpty(imagePath))
+                    {
+                        product.PhotoReview = imagePath;
+                    }
                 }
 
                 if (product != null)
@@ -59,7 +63,7 @@ namespace Infrastructure.Repositories.Product
             }
         }
 
-        private async Task<string> SaveFile(IFormFile file)
+        private async Task<string> SaveFile(IFormFile file, string productId)
         {
             try
             {
@@ -70,10 +74,34 @@ namespace Infrastructure.Repositories.Product
                 using var output = new FileStream(filePath, FileMode.Create);
                 await file.OpenReadStream().CopyToAsync(output);
                 return fileName;
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return "";
             }
+        }
+
+        public async Task<bool> DeleteProduct(string ProductId)
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    var product = _context.Products.FirstOrDefault(x => x.ProductId == int.Parse(ProductId));
+                    if (product != null)
+                    {
+                        _context.Products.Remove(product);
+                        await _context.SaveChangesAsync();
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
         }
     }
 }

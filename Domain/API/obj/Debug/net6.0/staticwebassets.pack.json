@@ -253,12 +253,40 @@
       "PackagePath": "staticwebassets\\assets\\img\\ff8ad914-3bbd-4e6d-bbd2-dfc3ff016405.jpg"
     },
     {
+      "Id": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\assets\\img\\products\\0.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\0.jpg"
+    },
+    {
+      "Id": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\assets\\img\\products\\00000000-0000-0000-0000-000000000000.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\00000000-0000-0000-0000-000000000000.jpg"
+    },
+    {
+      "Id": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\assets\\img\\products\\00000000-0000-0000-0000-000000000000.png",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\00000000-0000-0000-0000-000000000000.png"
+    },
+    {
+      "Id": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\assets\\img\\products\\4f469854-44f1-4971-84eb-618ab506c29d.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\4f469854-44f1-4971-84eb-618ab506c29d.jpg"
+    },
+    {
       "Id": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\assets\\img\\products\\692e5bb2-fc67-488e-8632-b86c89adbe00.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\692e5bb2-fc67-488e-8632-b86c89adbe00.jpg"
     },
     {
+      "Id": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\assets\\img\\products\\71b161b7-fc7e-4db8-81fd-ff11ee897ffc.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\71b161b7-fc7e-4db8-81fd-ff11ee897ffc.jpg"
+    },
+    {
+      "Id": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\assets\\img\\products\\9be6e7c1-5fab-4734-94f2-f0c9b5f97a02.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\9be6e7c1-5fab-4734-94f2-f0c9b5f97a02.jpg"
+    },
+    {
       "Id": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\assets\\img\\products\\d1273672-f3bc-49b6-ab1e-32dae5162e51.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\products\\d1273672-f3bc-49b6-ab1e-32dae5162e51.jpg"
+    },
+    {
+      "Id": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\assets\\img\\products\\f7bb3459-f089-4075-a999-dfdf39ddc37b.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\products\\f7bb3459-f089-4075-a999-dfdf39ddc37b.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props",

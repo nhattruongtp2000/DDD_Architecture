@@ -20,3 +20,23 @@ export class ProductModel{
         this.IsChecked=isChecked
     }
 }
+
+export class AddProductRequest{
+    ProductName!:string;
+    Description!:string;
+    Content!:string;
+    Price!:number;
+    PhotoReview!:File
+
+    constructor( productName:string,
+        description:string,
+        content:string,
+        price:number,
+        photoReview:File) {
+        this.ProductName=productName;
+        this.Description=description;
+        this.Content=content;
+        this.Price=price;
+        this.PhotoReview=photoReview;
+    }
+}

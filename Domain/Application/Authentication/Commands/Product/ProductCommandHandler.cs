@@ -36,6 +36,14 @@ namespace Application.Authentication.Commands.Payment
                         return new ErrorOr<DataResult>();
                     }
                     return new DataResult(data);
+                case "String":
+                    var isDeleteSuccess = await _productRepository.DeleteProduct(request.productRequest);
+                    if (isDeleteSuccess == null || !isDeleteSuccess)
+                    {
+                        return new ErrorOr<DataResult>();
+                    }
+                    return new DataResult(isDeleteSuccess);
+                    break;
                 default:
                     break;
             }

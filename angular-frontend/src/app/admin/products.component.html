@@ -28,6 +28,9 @@
                     <th class="font-normal">
                         PRICE
                     </th>
+                    <th class="font-normal">
+                        PHOTO REVIEW
+                    </th>
                     <th></th>
                 </tr>
             </thead>
@@ -50,6 +53,9 @@
                     </td>
                     <td class="border-t border-b">
                         <p>{{product.Price }}</p>
+                    </td>
+                    <td class="border-t border-b">
+                        <img width="100px" height="100px" [src]="product.PhotoReview"/>
                     </td>
                     <td class=" border-t border-b">
                         <div class="flex gap-x-2">

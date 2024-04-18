@@ -30,6 +30,10 @@ namespace API.Common.Mapping
                 .Map(order=>order.orderInfo,src=>src);
             config.NewConfig<AddProductRequest, ProductCommand>()
            .Map(request => request.productRequest, src => src);
+
+            config.NewConfig<string, ProductCommand>()
+.Map(request => request.productRequest, src => src);
+
             config.NewConfig<ClientOrdersAddModel, ClientOrdersCommand>()
             .Map(request => request.orderCommand, src => src);
             config.NewConfig<string, UserCommand>()

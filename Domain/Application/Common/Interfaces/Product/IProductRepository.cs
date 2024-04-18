@@ -10,6 +10,7 @@ namespace Application.Common.Interfaces.Product
     public interface IProductRepository
     {
         Task<bool> AddNewProduct(AddProductRequest request);
+        Task<bool> DeleteProduct(string ProductId);
         Task<List<ProductModel>> GetAll() ;
     }
 }

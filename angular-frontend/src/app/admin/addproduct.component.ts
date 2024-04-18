@@ -2,7 +2,7 @@ import { Component,Input,OnInit } from "@angular/core";
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormGroup,FormBuilder,Validators, Form } from "@angular/forms";
 import { ProductModel } from "../_model/Product/ProductModel";
-
+import { AddProductRequest } from "../_model/Product/ProductModel";
 
 @Component({
     selector: 'app-addproduct',
@@ -34,8 +34,9 @@ import { ProductModel } from "../_model/Product/ProductModel";
       this.form=this.formBuilder.group({
         ProductName:[dataEdit?.ProductName == null || this.dataEdit.ProductName == undefined ?"abc":this.dataEdit.ProductName,Validators.required],
         Description:[dataEdit?.Description,Validators.required],
-        ProductId:[dataEdit?.ProductId,Validators.required],
+        Content:[dataEdit?.Content,Validators.required],
         Price:[dataEdit?.Price,Validators.required],
+        PhotoReview:[null]       
       })
     }
   
@@ -44,15 +45,15 @@ import { ProductModel } from "../_model/Product/ProductModel";
         this.dialogRef.close();
       }
     
-    onSubmit(){
-      const productAdded : ProductModel={
+    onSubmit(imageInput: any){
+      console.log(imageInput.files[0])
+      const file:File=imageInput.files[0]
+      const productAdded : AddProductRequest={
         ProductName : this.form.value.ProductName,
         Description : this.form.value.Description,
-        ProductId : this.form.value.ProductId,
         Price : this.form.value.Price,
-        Content:"",
-        PhotoReview:"",
-        IsChecked:false
+        Content:this.form.value.Content,
+        PhotoReview:file,
       };
       console.log(productAdded)
       this.dialogRef.close({data:productAdded});

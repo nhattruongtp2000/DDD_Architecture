@@ -62,7 +62,6 @@ export class UserSettingComponent implements OnInit {
     });
   }
 
-
   onSubmit() {
     const requestData: UserUpdateData = {
       Email: this.form.value.Email,

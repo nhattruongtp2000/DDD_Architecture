@@ -70,7 +70,6 @@ export class UserService{
 
     public UpdateUserByEmail(request: UserUpdateRequest)
     {
-      console.log(this.urlUser+"/update-user")
       return axios.post(this.urlUser+"/update-user",request).then(response=>{
         if(response.status=200)
         {
@@ -108,10 +107,7 @@ export class UserService{
       request.append('Email', requestUpload.Email);
       request.append('Caption', requestUpload.Caption);
       request.append('IsDefault', String(requestUpload.IsDefault));
-      console.log(request.getAll('ImageFile'))
-      console.log(request.getAll('Email'))
-      console.log(request.getAll('Caption'))
-      console.log(request.getAll('IsDefault'))
+
 
       return axios.post(this.urlUser+"/upload-user-image",request).then(response=>{
         if(response.status=200)

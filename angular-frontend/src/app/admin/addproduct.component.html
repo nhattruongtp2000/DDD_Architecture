@@ -5,7 +5,7 @@
         </div>
         <button (click)="closeDialog()" class="mr-auto">x</button>
     </div>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(imageInput2)">
         <div class="w-[100%]">
             <div class="flex">
                 <div>
@@ -27,8 +27,8 @@
                 <div>
                     <p>Id</p>
                     <input class="border bg-gray-100 " type="text"
-                    placeholder="Product Id"
-                    formControlName="ProductId"
+                    placeholder="Content"
+                    formControlName="Content"
                      />
                 </div>
                 <div>
@@ -41,7 +41,7 @@
             </div>
             <p>Product Details</p>
             <textarea class="bg-gray-100 w-[100%]"></textarea>
-            <input type="file" />
+            <input  #imageInput2  type="file" />
             <button class="bg-blue-500 border rounded-[8px] p-[3px] text-white">Add product</button>
         </div>
     </form>
