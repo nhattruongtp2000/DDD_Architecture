@@ -1,4 +1,5 @@
 ﻿using Application.Authentication;
+using Application.Authentication.Commands.ClientOrder;
 using Application.Authentication.Commands.Payment;
 using Application.Authentication.Commands.Register;
 using Application.Authentication.Commands.User;
@@ -6,6 +7,7 @@ using Application.Authentication.Queries.Login;
 using Application.Authentication.Queries.Token;
 using Application.Authentication.Queries.Users;
 using Contracts.Authentication;
+using Contracts.Orders;
 using Contracts.Payment;
 using Contracts.Products;
 using Contracts.UsersContracts;
@@ -26,25 +28,24 @@ namespace API.Common.Mapping
                 .Map(order=>order.orderInfo,src=>src);
             config.NewConfig<string, PaymentCommand>()
                 .Map(order=>order.orderInfo,src=>src);
-
             config.NewConfig<AddProductRequest, ProductCommand>()
            .Map(request => request.productRequest, src => src);
-
+            config.NewConfig<ClientOrdersAddModel, ClientOrdersCommand>()
+            .Map(request => request.orderCommand, src => src);
             config.NewConfig<string, UserCommand>()
              .Map(dest => dest.userUpdate, src => src); ;
-
             config.NewConfig<UserImageCreateRequest, UserCommand>()
                   .Map(dest => dest.userUpdate, src => src); ;
-
             config.NewConfig<UserCommand, User>()
                 .Map(dest=>dest,src=>src.userUpdate);
             config.NewConfig<UpdatePasswordRequest, UserCommand>()
                   .Map(dest => dest.userUpdate, src => src); ;
-
             config.NewConfig<UserUpdateRequest, UserCommand>()
                  .Map(dest => dest.userUpdate, src => src.userUpdate);
 
             config.NewConfig<User, UserModel>();
+            config.NewConfig<List<OrderDetails>, List<ClientOrdersDetailsModel>>();
+
 
             config.NewConfig<AuthenticationResult, AuthenticationResponse>()
                 .Map(dest => dest.Token, src => src.Token)
@@ -53,7 +54,6 @@ namespace API.Common.Mapping
             config.NewConfig<Product, AddProductRequest>();
 
             config.NewConfig<List<Product>, List<ProductModel>>();
-
         }
     }
 }

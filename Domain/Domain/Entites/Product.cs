@@ -13,9 +13,9 @@ namespace Domain.Entites
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdProduct { get; set; }
-        public int? IdCategory { get; set; }
-        public int? IdBrand { get; set; }
+        public int ProductId { get; set; }
+        public int? CategoryId { get; set; }
+        public int? BrandId { get; set; }
         public string? Description { get; set; }
         public string? Alias { get; set; }
         public string? Keyword { get; set; }

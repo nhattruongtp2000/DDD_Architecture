@@ -4514,25 +4514,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Truong\\.nuget\\packages\\": {},
-    "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\API.csproj",
+      "projectUniqueName": "E:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\Truong\\.nuget\\packages\\",
-      "outputPath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\obj\\",
+      "projectPath": "E:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "E:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Truong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -4543,22 +4541,21 @@
       "sources": {
         "C:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Application\\Application.csproj": {
-              "projectPath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Application\\Application.csproj"
+            "E:\\DDD_Architecture\\DDD_Architecture\\Domain\\Application\\Application.csproj": {
+              "projectPath": "E:\\DDD_Architecture\\DDD_Architecture\\Domain\\Application\\Application.csproj"
             },
-            "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Contracts\\Contracts.csproj": {
-              "projectPath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Contracts\\Contracts.csproj"
+            "E:\\DDD_Architecture\\DDD_Architecture\\Domain\\Contracts\\Contracts.csproj": {
+              "projectPath": "E:\\DDD_Architecture\\DDD_Architecture\\Domain\\Contracts\\Contracts.csproj"
             },
-            "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\Infrastructure\\Infrastructure.csproj"
+            "E:\\DDD_Architecture\\DDD_Architecture\\Domain\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "E:\\DDD_Architecture\\DDD_Architecture\\Domain\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -4597,6 +4594,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.26, 6.0.26]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.26, 6.0.26]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.26, 6.0.26]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.26, 6.0.26]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -4605,7 +4620,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

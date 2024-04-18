@@ -78,9 +78,8 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("TotalPice")
                         .HasColumnType("decimal(18,2)");
@@ -128,26 +127,26 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entites.Product", b =>
                 {
-                    b.Property<int>("IdProduct")
+                    b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdProduct"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"));
 
                     b.Property<string>("Alias")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("BrandId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("IdBrand")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("IdCategory")
-                        .HasColumnType("int");
 
                     b.Property<bool?>("IsGift")
                         .HasColumnType("bit");
@@ -180,7 +179,7 @@ namespace Persistence.Migrations
                     b.Property<bool?>("UseVoucher")
                         .HasColumnType("bit");
 
-                    b.HasKey("IdProduct");
+                    b.HasKey("ProductId");
 
                     b.ToTable("Products");
                 });
