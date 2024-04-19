@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cxxJH++WdmPcaYNxieitGc/FLKkJSMGk+7BD6tjlxbM=",
+  "Hash": "tBiDavh3/njO1tqEavQ47AU13i8k6No3GRAYYS1HXjk=",
   "Source": "API",
   "BasePath": "_content/API",
   "Mode": "Default",
@@ -1137,6 +1137,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\products\\00000000-0000-0000-0000-000000000000.png"
+    },
+    {
+      "Identity": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\assets\\img\\products\\0255bad4-7238-46c3-90d2-106cab16d94c.jpg",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "assets/img/products/0255bad4-7238-46c3-90d2-106cab16d94c.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\products\\0255bad4-7238-46c3-90d2-106cab16d94c.jpg"
+    },
+    {
+      "Identity": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\assets\\img\\products\\451e64cc-54f0-4d57-9ac0-7af46c6a33e6.jpg",
+      "SourceId": "API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\",
+      "BasePath": "_content/API",
+      "RelativePath": "assets/img/products/451e64cc-54f0-4d57-9ac0-7af46c6a33e6.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\products\\451e64cc-54f0-4d57-9ac0-7af46c6a33e6.jpg"
     },
     {
       "Identity": "D:\\DDD_Architecture\\DDD_Architecture\\Domain\\API\\wwwroot\\assets\\img\\products\\4f469854-44f1-4971-84eb-618ab506c29d.jpg",

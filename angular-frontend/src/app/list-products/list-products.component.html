@@ -168,7 +168,7 @@
               >
                 {{ product.ProductName }}</span
               >
-              <img src="assets/img/100_mp02v-dOr9PbBNiD.webp" />
+              <img class="w-full h-[250px]"   [src]="product.PhotoReview"/>
             </a>
             <div class="mt-5">
               <p class="font-medium ">{{ product.ProductName }}</p>
@@ -180,7 +180,7 @@
                   <span>d</span></p>
                 </div>
                 <a class="md:w-[32px] bg-gray-400 hover:bg-yellow-400 ">
-                  <img class="cursor-pointer p-2" src="assets/img/shopping-cart.png" w alt="" />
+                  <img (click)="addToCart(product)" class="cursor-pointer p-2" src="assets/img/shopping-cart.png" w alt="" />
                 </a>
               </div>
              
