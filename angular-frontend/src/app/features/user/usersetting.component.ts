@@ -13,7 +13,7 @@ class ImageSnippet {
   constructor(public src: string, public file: File) {}
 }
 @Component({
-  selector: 'app-usersetting',
+  selector: 'usersetting',
   templateUrl: './usersetting.component.html',
   styleUrls: ['./usersetting.component.css'],
 })

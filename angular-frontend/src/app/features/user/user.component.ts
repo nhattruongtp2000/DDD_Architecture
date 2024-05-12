@@ -3,7 +3,7 @@ import { User } from '../authen/login.component';
 import { UserService } from 'src/app/core/services/UserService.service';
 
 @Component({
-  selector: 'app-user',
+  selector: 'user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })

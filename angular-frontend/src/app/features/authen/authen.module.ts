@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register.component';
 import { LoginComponent } from './login.component';
 import { AuthenLayoutComponent } from './authen-layout.component';
+import { ChangePasswordComponent } from './change-password.component';
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import { AuthenLayoutComponent } from './authen-layout.component';
     declarations: [
         RegisterComponent,
         LoginComponent,
-        AuthenLayoutComponent
+        AuthenLayoutComponent,
+        ChangePasswordComponent
     ],
     exports:[]
 })

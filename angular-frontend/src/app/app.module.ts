@@ -9,7 +9,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { UserComponent } from './features/user/user.component';
 import { UserSettingComponent } from './features/user/usersetting.component';
-import { TransactionComponent } from './transaction/transaction.component';
+import { TransactionComponent } from './features/transaction/transaction.component';
 import { ListProductsComponent } from './features/list-products/list-products.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';

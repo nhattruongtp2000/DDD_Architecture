@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-transaction',
+  selector: 'transaction',
   templateUrl: './transaction.component.html',
   styleUrls: ['./transaction.component.css']
 })
