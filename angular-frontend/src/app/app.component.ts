@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { User } from './login/login.component';
-import { UserService } from './_service/UserService.service';
-import { CartService } from './_service/CartService.service';
+import { CartService } from './core/services/CartService.service';
+import { User } from './features/authen/login.component';
+import { UserService } from './core/services/UserService.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

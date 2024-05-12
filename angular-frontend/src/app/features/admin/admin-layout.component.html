@@ -1,0 +1,97 @@
+<div>
+    <div class="flex ">
+        <div class="w-[15%] mr-[2%] bg-white p-3 bg-gray-200">
+            <div class="border-b ">
+                <ul class="grid gap-y-1 text-[13px] text-gray-700">
+                    <li>
+                        <a class="flex p-1 gap-x-2 cursor-pointer hover:bg-gray-300 hover:border  hover:rounded-[4px]">
+                            <img width="20" src="assets/img/shopping-cart.png"/>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex p-1 gap-x-2 cursor-pointer hover:bg-gray-300 hover:border  hover:rounded-[4px]">
+                            <img width="20" src="assets/img/shopping-cart.png"/>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="flex p-1 gap-x-2 cursor-pointer hover:bg-gray-300 hover:border  hover:rounded-[4px]">
+                            <img width="20" src="assets/img/shopping-cart.png"/>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li >
+                        <button  (click)="changeDropDown()" class=" flex p-1 w-[100%] gap-x-2  cursor-pointer hover:bg-gray-300 hover:border  hover:rounded-[4px]">
+                            <img width="20" src="assets/img/shopping-cart.png"/>
+                            <span>E-commerce</span>
+                            <img class="ml-auto" src="assets/img/down-chevron.png" width="20px"/>
+                        </button>
+                        <ul *ngIf="isOpen" class="ml-[20%]">
+                            <li>Products</li>
+                            <li>Billing</li>
+                            <li>Invoice</li>
+                        </ul>
+                    </li>
+                    <li >
+                        <button  (click)="changeDropDown()" class=" flex p-1 w-[100%] gap-x-2  cursor-pointer hover:bg-gray-300 hover:border  hover:rounded-[4px]">
+                            <img width="20" src="assets/img/shopping-cart.png"/>
+                            <span>E-commerce</span>
+                            <img class="ml-auto" src="assets/img/down-chevron.png" width="20px"/>
+                        </button>
+                        <ul *ngIf="isOpen" class="ml-[20%]">
+                            <li>Products</li>
+                            <li>Billing</li>
+                            <li>Invoice</li>
+                        </ul>
+                    </li>
+                    <li >
+                        <button  (click)="changeDropDown()" class=" flex p-1 w-[100%] gap-x-2  cursor-pointer hover:bg-gray-300 hover:border  hover:rounded-[4px]">
+                            <img width="20" src="assets/img/shopping-cart.png"/>
+                            <span>E-commerce</span>
+                            <img class="ml-auto" src="assets/img/down-chevron.png" width="20px"/>
+                        </button>
+                        <ul *ngIf="isOpen" class="ml-[20%]">
+                            <li>Products</li>
+                            <li>Billing</li>
+                            <li>Invoice</li>
+                        </ul>
+                    </li>
+                    <li >
+                        <button  (click)="changeDropDown()" class=" flex p-1 w-[100%] gap-x-2  cursor-pointer hover:bg-gray-300 hover:border  hover:rounded-[4px]">
+                            <img width="20" src="assets/img/shopping-cart.png"/>
+                            <span>E-commerce</span>
+                            <img class="ml-auto" src="assets/img/down-chevron.png" width="20px"/>
+                        </button>
+                        <ul *ngIf="isOpen" class="ml-[20%]">
+                            <li>Products</li>
+                            <li>Billing</li>
+                            <li>Invoice</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid">
+                <a class="flex p-1 gap-x-2 cursor-pointer hover:bg-gray-300 hover:border  hover:rounded-[4px]">
+                    <img width="20" src="assets/img/shopping-cart.png"/>
+                    <span>Dashboard</span>
+                </a>
+                <a class="flex p-1 gap-x-2 cursor-pointer hover:bg-gray-300 hover:border  hover:rounded-[4px]">
+                    <img width="20" src="assets/img/shopping-cart.png"/>
+                    <span>Dashboard</span>
+                </a>
+                <a class="flex p-1 gap-x-2 cursor-pointer hover:bg-gray-300 hover:border  hover:rounded-[4px]">
+                    <img width="20" src="assets/img/shopping-cart.png"/>
+                    <span>Dashboard</span>
+                </a>
+            </div>
+            
+            
+        </div>
+        <div class="content w-[78%]">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+  
+</div>

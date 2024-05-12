@@ -1,0 +1,72 @@
+<div>
+    <p class="text-[20px] font-medium">All products</p>
+    <div class="flex my-[20px]">
+        <input [(ngModel)]="valueSearch" (ngModelChange)="filterOnChange($event)" placeholder="Search for proucts"
+            class="border border-gray-300 w-[300px] h-[40px] bg-gray-100 px-[20px] py-[3px]  border-[1px] rounded-[5px]"
+            type="text" />
+            <button (click)="removeItems()">Remove</button>
+        <button (click)="openDialog()" class="ml-auto bg-blue-800 rounded-[8px] p-[5px] text-white">+ Add
+            product</button>
+    </div>
+
+    <div class="text-[18px]">
+        <table class=" w-[100%] border-t ">
+            <thead>
+                <tr class="text-left bg-gray-200 h-[50px] text-[12px] font-medium text-gray-500">
+                    <th class="font-normal">
+                        <input type="checkbox" (change)="checkboxChanged($event)" />
+                    </th>
+                    <th class="font-normal">
+                        PRODUCT NAME
+                    </th>
+                    <th class="font-normal">
+                        Description
+                    </th>
+                    <th class="font-normal">
+                        ID
+                    </th>
+                    <th class="font-normal">
+                        PRICE
+                    </th>
+                    <th class="font-normal">
+                        PHOTO REVIEW
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of filterProducts">
+                    <td class="border-t border-b">
+                        <input type="checkbox" [(ngModel)]="product.IsChecked" />
+                    </td>
+                    <td class="border-t border-b grid">
+                        <div class="grid gap-y-[-5px]">
+                            <p class="font-medium" >{{product.ProductName}}</p>
+                            <p>Html templates</p>
+                        </div>
+                    </td>
+                    <td class="border-t border-b">
+                        <p>{{product.Description}}</p>
+                    </td>
+                    <td class="border-t border-b">
+                        <p>{{product.ProductId}}</p>
+                    </td>
+                    <td class="border-t border-b">
+                        <p>{{product.Price }}</p>
+                    </td>
+                    <td class="border-t border-b">
+                        <img width="100px" height="100px" [src]="product.PhotoReview"/>
+                    </td>
+                    <td class=" border-t border-b">
+                        <div class="flex gap-x-2">
+                            <button (click)="editItem(product)"
+                                class="bg-blue-700 rounded-[7px] p-[5px] text-white">Edit item</button>
+                            <button (click)="deleteItem(product)"
+                                class="bg-red-700 rounded-[7px] p-[5px] text-white">Delete item</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
