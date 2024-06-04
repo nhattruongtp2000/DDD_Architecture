@@ -1,0 +1,41 @@
+<div class="py-10 px-1">
+  <img src="" />
+  <div>
+    <p class="font-bold text-[25px]">Reset your password</p>
+    <p class="text-[12px]">Enter the email address you used to register with</p>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="SendInstruction()">
+    <div class="relative">
+      <input
+        class="border border-gray-300 w-[95%] py-1.5 rounded-[5px] pl-[10px]"
+        placeholder="Your email address"
+        formControlName="email"
+      />
+    </div>
+    <div *ngIf="email?.hasError('required') || email?.hasError('email')">
+      Please input your email
+    </div>
+    <div>
+      <a href="#" class="text-blue-800 font-bold"
+        >Forgot or lost your email address?</a
+      >
+    </div>
+
+    <div class="flex justify-between">
+      <button
+        type="button"
+        class="bg-gray-300 p-2 w-[130px] text-blue-800 rounded-[5px]"
+      >
+        Back to sign in
+      </button>
+
+      <button 
+        type="submit"
+        class="bg-blue-600 p-2 w-[130px] text-white rounded-[5px] mr-[5%]"
+      >
+        Send Instructions
+      </button>
+    </div>
+  </form>
+</div>

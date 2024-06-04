@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AuthenRoutingModule } from './authen-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,6 +9,7 @@ import { RegisterComponent } from './register.component';
 import { LoginComponent } from './login.component';
 import { AuthenLayoutComponent } from './authen-layout.component';
 import { ChangePasswordComponent } from './change-password.component';
+import { EmailChangePasswordCompoent } from './email-change-pw.component';
 
 @NgModule({
     imports: [
@@ -20,12 +21,14 @@ import { ChangePasswordComponent } from './change-password.component';
         RouterModule,
         CommonModule,
         BrowserModule,
+        FormsModule
     ],
     declarations: [
         RegisterComponent,
         LoginComponent,
         AuthenLayoutComponent,
-        ChangePasswordComponent
+        ChangePasswordComponent,
+        EmailChangePasswordCompoent
     ],
     exports:[]
 })

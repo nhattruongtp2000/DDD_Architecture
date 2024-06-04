@@ -98,3 +98,9 @@ export interface UserImageCreateRequest {
   IsDefault: boolean;
   ImageFile: File;
 }
+
+export interface ChangePasswordRequest{
+  Email:string;
+  Password:string;
+  ConfirmPassword:string;
+}

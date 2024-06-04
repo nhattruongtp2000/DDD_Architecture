@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     }
       var loginRequest = this.userService.login(request).then( response=>{
         if(response?.FirstName!=null || response?.FirstName!==""){
-          this.router.navigate(['../app-home'])
+          this.router.navigate(['../home'])
         }
       })
     

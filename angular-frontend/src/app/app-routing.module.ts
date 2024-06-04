@@ -13,7 +13,7 @@ import { PaymentModule } from './features/payment/payment.module';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
     canActivate: [AuthGuard],
   },

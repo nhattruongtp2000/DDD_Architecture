@@ -6,6 +6,7 @@ import { LoginComponent } from './login.component';
 import { RegisterComponent } from './register.component';
 import { AuthenLayoutComponent } from './authen-layout.component';
 import { ChangePasswordComponent } from './change-password.component';
+import { EmailChangePasswordCompoent } from './email-change-pw.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'change-password', component: ChangePasswordComponent },
+      { path: 'email-change-pw', component: EmailChangePasswordCompoent },
     ],
   },
 ];

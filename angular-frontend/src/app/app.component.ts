@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CartService } from './core/services/CartService.service';
 import { User } from './features/authen/login.component';
 import { UserService } from './core/services/UserService.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +14,13 @@ export class AppComponent {
 
   constructor(
     private UserService: UserService,
-    private CartService: CartService
+    private CartService: CartService,
+    private router: Router,
+
   ) {
     this.UserService.user.subscribe((x) => (this.user = x));
-    console.log(this.user);
+    if(this.user==null)
+    this.router.navigate(['/login']);
   }
 
   logout() {
